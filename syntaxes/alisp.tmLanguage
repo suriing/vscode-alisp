@@ -107,7 +107,7 @@
 			<string>\b(?i:cons|car|cdr|cond|lambda|format|setq|setf|quote|eval|append|list|listp|memberp|t|load|progn|
 			|abs|acad_colordlg|acad_helpdlg|acad-pop-dbmod|acad_strlsort|acad_truecolorcli|acad_truecolordlg|acdimenableupdate|acet-layerp-mode|acet-layerp-mark|acet-laytrans|acet-ms-to-ps|acet-ps-to-ms|action_tile|add_list|alert|alloc|and|angle|angtof|angtos|apply|arx|arxload|arxunload|ascii|assoc|atan|atof|atoi|atom|atoms-family|autoarxload|autoload|
 			|boole|boundp|
-			|caddr|cadr|car|cdr|chr|client_data_tile|close|command|cond|cons|cos|cvunit|
+			|caaaar|cadaar|cdaaar|cddaar|caaadr|cadadr|cdaadr|cddadr|caaar|cadar|cdaar|cddar|caadar|caddar|cdadar|cdddar|caaddr|cadddr|cdaddr|cddddr|caadr|caddr|cdadr|cdddr|caar|cadr|cdar|cddr|chr|client_data_tile|close|command|cos|cvunit|
 			|defun-q|defun-q-list-ref|defun-q-list-set|dictadd|dictnext|dictremove|dictrename|dictsearch|dimx_tile|dimy_tile|distance|distof|done_dialog|
 			|end_image|end_list|entdel|entget|entlast|entmake|entmakex|entmod|entnext|entsel|entupd|equal|exit|exp|expand|expt|
 			|fill_image|findfile|fix|float|foreach|function|
