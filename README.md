@@ -1,13 +1,14 @@
-# vscode-lisp
+# vscode-alisp
 
-Lisp syntax for vscode
+autolisp(AutoCAD lisp) syntax for vscode
 
 ## License
 
-This extension use a file that bradrobertson's sublime-packages to enable syntax on vscode.
+This extension is forked from vscode-lisp by Yasuhiro Matsumoto (a.k.a. mattn)
 
-https://github.com/bradrobertson/sublime-packages/tree/master/Lisp
+https://github.com/mattn/vscode-lisp
 
-## Author
+## Author & git repo
 
-Yasuhiro Matsumoto (a.k.a. mattn)
+suriing
+https://github.com/suriing/vscode-alisp

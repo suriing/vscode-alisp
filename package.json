@@ -1,32 +1,32 @@
 {
-  "name": "Lisp",
-  "version": "0.0.6",
-  "publisher": "mattn",
+  "name": "alisp",
+  "version": "0.0.1",
+  "publisher": "suriing",
   "engines": {
     "vscode": "^0.10.10"
   },
-  "description": "Lisp syntax highlight",
+  "description": "alisp syntax highlight",
   "categories": ["Languages"],
   "license": "MIT",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/mattn/vscode-lisp"
+    "url": "https://github.com/suriing/vscode-alisp"
   },
   "contributes": {
     "languages": [{
-      "id": "lisp",
-      "aliases": ["Lisp", "lisp"],
-      "extensions": [".lisp"]
+      "id": "alisp",
+      "aliases": ["alisp", "autolisp", "AutoLisp", "Autolisp"],
+      "extensions": [".lsp"]
     }],
     "grammars": [{
-      "language": "lisp",
-      "scopeName": "source.lisp",
-      "path": "./syntaxes/Lisp.tmLanguage"
+      "language": "alisp",
+      "scopeName": "source.alisp",
+      "path": "./syntaxes/alisp.tmLanguage"
     }]
   },
   "readmeFilename": "README.md",
   "bugs": {
-    "url": "https://github.com/mattn/vscode-lisp/issues"
+    "url": "https://github.com/suriing/vscode-alisp/issues"
   }
 }
