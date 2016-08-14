@@ -1,0 +1,23 @@
+{
+    "command": {
+        "prefix": "command",
+        "body": [
+            "command \"${1:command_name}\" $2"
+        ],
+        "description": "Code snippet for an command function"
+    },
+    "setvar": {
+        "prefix": "setvar",
+        "body": [
+            "setvar \"${1:variable_name}\" $2"
+        ],
+        "description": "Code snippet for an setvar function"
+    },
+    "getvar": {
+        "prefix": "getvar",
+        "body": [
+            "getvar \"${variable_name}\""
+        ],
+        "description": "Code snippet for an getvar function"
+    },
+}

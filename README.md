@@ -1,6 +1,6 @@
 # vscode-alisp
 
-autolisp(AutoCAD lisp) syntax for vscode
+autolisp(AutoCAD lisp) syntax and snippets for vscode
 
 ## License
 
@@ -11,4 +11,5 @@ https://github.com/mattn/vscode-lisp
 ## Author & git repo
 
 suriing
+
 https://github.com/suriing/vscode-alisp

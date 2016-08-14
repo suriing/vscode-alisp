@@ -3,12 +3,11 @@
   "version": "0.0.1",
   "publisher": "suriing",
   "engines": {
-    "vscode": "^0.10.10"
+    "vscode": "^1.0.0"
   },
   "description": "alisp syntax highlight",
-  "categories": ["Languages"],
+  "categories": ["Languages", "Snippets"],
   "license": "MIT",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/suriing/vscode-alisp"
@@ -17,12 +16,17 @@
     "languages": [{
       "id": "alisp",
       "aliases": ["alisp", "autolisp", "AutoLisp", "Autolisp"],
-      "extensions": [".lsp"]
+      "extensions": [".lsp"],
+      "configuration": "./language-configuration.json"
     }],
     "grammars": [{
       "language": "alisp",
       "scopeName": "source.alisp",
       "path": "./syntaxes/alisp.tmLanguage"
+    }],
+    "snippets": [{
+        "language": "alisp",
+        "path": "./snippets/alisp.json"
     }]
   },
   "readmeFilename": "README.md",

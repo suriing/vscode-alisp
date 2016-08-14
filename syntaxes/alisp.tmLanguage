@@ -19,6 +19,14 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>begin</key>
+			<string>;\|</string>
+			<key>end</key>
+			<string>\|;</string>
+			<key>name</key>
+			<string>comment.block.alisp</string>
+		</dict>
+		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
