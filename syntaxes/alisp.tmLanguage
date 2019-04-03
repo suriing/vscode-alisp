@@ -55,7 +55,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(\b(?i:(defun|defmethod|defmacro))\b)(\s+)((\w|\-|\!|\?)*)</string>
+			<string>(\b(?i:(defun))\b)(\s+)((\w|\-|\!|\?)*)</string>
 			<key>name</key>
 			<string>meta.function.alisp</string>
 		</dict>
@@ -94,7 +94,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:case|do|let|loop|if|else|when|repeat|while)\b</string>
+			<string>\b(?i:case|if|foreach|repeat|while)\b</string>
 			<key>name</key>
 			<string>keyword.control.alisp</string>
 		</dict>
@@ -119,7 +119,7 @@
 			|caaaar|cadaar|cdaaar|cddaar|caaadr|cadadr|cdaadr|cddadr|caaar|cadar|cdaar|cddar|caadar|caddar|cdadar|cdddar|caaddr|cadddr|cdaddr|cddddr|caadr|caddr|cdadr|cdddr|caar|cadr|cdar|cddr|cal|chr|client_data_tile|close|command|command-s|cos|cvunit|
 			|defun-q|defun-q-list-ref|defun-q-list-set|dictadd|dictnext|dictremove|dictrename|dictsearch|dimx_tile|dimy_tile|distance|distof|done_dialog|dumpallproperties|
 			|end_image|end_list|entdel|entget|entlast|entmake|entmakex|entmod|entnext|entsel|entupd|equal|exit|exp|expand|expt|
-			|fill_image|findfile|findtrustedfile|fix|float|foreach|function|
+			|fill_image|findfile|findtrustedfile|fix|float|function|
 			|gc|gcd|get_attr|get_tile|getangle|getcfg|getcname|getcorner|getdist|getenv|getfiled|getint|getkword|getorient|getpoint|getpropertyvalue|getreal|getstring|getvar|graphscr|grclear|grdraw|grread|grtext|grvecs|
 			|handent|help|
 			|initcommandversion|initdia|initget|inters|ispropertyreadonly|itoa|
@@ -133,7 +133,21 @@
 			|set|set_tile|setcfg|setenv|setfunhelp|setpropertyvalue|setvar|setview|showHTMLModalWindow|sin|slide_image|snvalid|solprof|sqrt|ssadd|ssdel|ssget|ssgetfirst|sslength|ssmemb|ssname|ssnamex|sssetfirst|startapp|start_dialog|start_image|start_list|strcase|strcat|strlen|subst|substr|
 			|tablet|tblnext|tblobjname|tblsearch|term_dialog|terpri|textbox|textpage|textscr|trace|trans|type|
 			|unload_dialog|untrace|
-			|vector_image|ver|vl-acad-defun|vl-acad-undefun|vl-arx-import|vl-bb-ref|vl-bb-set|vl-catch-all-apply|vl-catch-all-error-message|vl-catch-all-error-p|vl-cmdf|vl-consp|vl-directory-files|vl-doc-export|vl-doc-import|vl-doc-ref|vl-doc-set|vl-every|vl-exit-with-error|vl-exit-with-value|vl-file-copy|vl-file-delete|vl-file-directory-p|vl-file-rename|vl-file-size|vl-file-systime|vl-filename-base|vl-filename-directory|vl-filename-extension|vl-filename-mktemp|vl-get-resource|vl-list*|vl-list->string|vl-list-exported-functions|vl-list-length|vl-list-loaded-vlx|vl-load-all|vl-load-com|vl-load-reactors|vl-mkdir|vl-member-if|vl-member-if-not|vl-position|vl-prin1-to-string|vl-princ-to-string|vl-propagate|vl-registry-delete|vl-registry-descendents|vl-registry-read|vl-registry-write|vl-remove|vl-remove-if|vl-remove-if-not|vl-some|vl-sort|vl-sort-i|vl-string->list|vl-string-elt|vl-string-left-trim|vl-string-mismatch|vl-string-position|vl-string-right-trim|vl-string-search|vl-string-subst|vl-string-translate|vl-string-trim|vl-symbol-name|vl-symbol-value|vl-symbolp|vl-unload-vlx|vl-vbaload|vl-vbarun|vl-vlx-loaded-p|vlax-3D-point|vlax-add-cmd|vlax-create-object|vlax-curve-getArea|vlax-curve-getClosestPointTo|vlax-curve-getClosestPointToProjection|vlax-curve-getDistAtParam|vlax-curve-getDistAtPoint|vlax-curve-getEndParam|vlax-curve-getEndPoint|vlax-curve-getFirstDeriv|vlax-curve-getParamAtDist|vlax-curve-getParamAtPoint|vlax-curve-getPointAtDist|vlax-curve-getPointAtParam|vlax-curve-getSecondDeriv|vlax-curve-getStartParam|vlax-curve-getStartPoint|vlax-curve-isClosed|vlax-curve-isPeriodic|vlax-curve-isPlanar|vlax-dump-object|vlax-ename->vla-object|vlax-erased-p|vlax-for|vlax-get-acad-object|vlax-get-object|vlax-get-or-create-object|vlax-get-property|vlax-import-type-library|vlax-invoke-method|vlax-ldata-delete|vlax-ldata-get|vlax-ldata-list|vlax-ldata-put|vlax-ldata-test|vlax-machine-product-key|vlax-make-safearray|vlax-make-variant|vlax-map-collection|vlax-method-applicable-p|vlax-object-released-p|vlax-product-key|vlax-property-available-p|vlax-put-property|vlax-read-enabled-p|vlax-release-object|vlax-remove-cmd|vlax-safearray-fill|vlax-safearray-get-dim|vlax-safearray-get-element|vlax-safearray-get-l-bound|vlax-safearray-get-u-bound|vlax-safearray-put-element|vlax-safearray-type|vlax-safearray->list|vlax-tmatrix|vlax-typeinfo-available-p|vlax-variant-change-type|vlax-variant-type|vlax-variant-value|vlax-vla-object->ename|vlax-write-enabled-p|vlisp-compile|vlr-acdb-reactor|vlr-add|vlr-added-p|vlr-beep-reaction|vlr-command-reactor|vlr-current-reaction-name|vlr-data|vlr-data-set|vlr-deepclone-reactor|vlr-docmanager-reactor|vlr-dwg-reactor|vlr-dxf-reactor|vlr-editor-reactor|vlr-insert-reactor|vlr-linker-reactor|vlr-lisp-reactor|vlr-miscellaneous-reactor|vlr-mouse-reactor|vlr-notification|vlr-object-reactor|vlr-owner-add|vlr-owner-remove|vlr-owners|vlr-pers|vlr-pers-list|vlr-pers-p|vlr-pers-release|vlr-reaction-name|vlr-reaction-set|vlr-reactions|vlr-reactors|vlr-remove|vlr-remove-all|vlr-set-notification|vlr-sysvar-reactor|vlr-toolbar-reactor|vlr-trace-reaction|vlr-type|vlr-types|vlr-undo-reactor|vlr-wblock-reactor|vlr-window-reactor|vlr-xref-reactor|vports|
+			|vector_image|ver|vl-acad-defun|vl-acad-undefun|vl-arx-import|vl-bb-ref|vl-bb-set|vl-catch-all-apply|vl-catch-all-error-message|vl-catch-all-error-p|vl-cmdf|vl-consp|vl-directory-files|vl-doc-export|vl-doc-import|vl-doc-ref|
+			|vl-doc-set|vl-every|vl-exit-with-error|vl-exit-with-value|vl-file-copy|vl-file-delete|vl-file-directory-p|vl-file-rename|vl-file-size|vl-file-systime|vl-filename-base|vl-filename-directory|vl-filename-extension|vl-filename-mktemp|
+			|vl-get-resource|vl-list*|vl-list->string|vl-list-exported-functions|vl-list-length|vl-list-loaded-vlx|vl-load-all|vl-load-com|vl-load-reactors|vl-mkdir|vl-member-if|vl-member-if-not|vl-position|vl-prin1-to-string|vl-princ-to-string|
+			|vl-propagate|vl-registry-delete|vl-registry-descendents|vl-registry-read|vl-registry-write|vl-remove|vl-remove-if|vl-remove-if-not|vl-some|vl-sort|vl-sort-i|vl-string->list|vl-string-elt|vl-string-left-trim|vl-string-mismatch|
+			|vl-string-position|vl-string-right-trim|vl-string-search|vl-string-subst|vl-string-translate|vl-string-trim|vl-symbol-name|vl-symbol-value|vl-symbolp|vl-unload-vlx|vl-vbaload|vl-vbarun|vl-vlx-loaded-p|vlax-3D-point|vlax-add-cmd|
+			|vlax-create-object|vlax-curve-getArea|vlax-curve-getClosestPointTo|vlax-curve-getClosestPointToProjection|vlax-curve-getDistAtParam|vlax-curve-getDistAtPoint|vlax-curve-getEndParam|vlax-curve-getEndPoint|vlax-curve-getFirstDeriv|
+			|vlax-curve-getParamAtDist|vlax-curve-getParamAtPoint|vlax-curve-getPointAtDist|vlax-curve-getPointAtParam|vlax-curve-getSecondDeriv|vlax-curve-getStartParam|vlax-curve-getStartPoint|vlax-curve-isClosed|vlax-curve-isPeriodic|
+			|vlax-curve-isPlanar|vlax-dump-object|vlax-ename->vla-object|vlax-erased-p|vlax-for|vlax-get-acad-object|vlax-get-object|vlax-get-or-create-object|vlax-get-property|vlax-import-type-library|vlax-invoke-method|vlax-ldata-delete|
+			|vlax-ldata-get|vlax-ldata-list|vlax-ldata-put|vlax-ldata-test|vlax-machine-product-key|vlax-make-safearray|vlax-make-variant|vlax-map-collection|vlax-method-applicable-p|vlax-object-released-p|vlax-product-key|
+			|vlax-property-available-p|vlax-put-property|vlax-read-enabled-p|vlax-release-object|vlax-remove-cmd|vlax-safearray-fill|vlax-safearray-get-dim|vlax-safearray-get-element|vlax-safearray-get-l-bound|vlax-safearray-get-u-bound|
+			|vlax-safearray-put-element|vlax-safearray-type|vlax-safearray->list|vlax-tmatrix|vlax-typeinfo-available-p|vlax-variant-change-type|vlax-variant-type|vlax-variant-value|vlax-vla-object->ename|vlax-write-enabled-p|vlisp-compile|
+			|vlr-acdb-reactor|vlr-add|vlr-added-p|vlr-beep-reaction|vlr-command-reactor|vlr-current-reaction-name|vlr-data|vlr-data-set|vlr-deepclone-reactor|vlr-docmanager-reactor|vlr-dwg-reactor|vlr-dxf-reactor|vlr-editor-reactor|
+			|vlr-insert-reactor|vlr-linker-reactor|vlr-lisp-reactor|vlr-miscellaneous-reactor|vlr-mouse-reactor|vlr-notification|vlr-object-reactor|vlr-owner-add|vlr-owner-remove|vlr-owners|vlr-pers|vlr-pers-list|vlr-pers-p|vlr-pers-release|
+			|vlr-reaction-name|vlr-reaction-set|vlr-reactions|vlr-reactors|vlr-remove|vlr-remove-all|vlr-set-notification|vlr-sysvar-reactor|vlr-toolbar-reactor|vlr-trace-reaction|vlr-type|vlr-types|vlr-undo-reactor|vlr-wblock-reactor|
+			|vlr-window-reactor|vlr-xref-reactor|vports|
 			|wcmatch|write-char|write-line|
 			|xdroom|xdsize|
 			|zerop|

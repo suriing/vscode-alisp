@@ -1,23 +1,694 @@
 {
     "command": {
         "prefix": "command",
-        "body": [
-            "command \"${1:command_name}\" $2"
-        ],
+        "body": "command \"${1:command_name}\" ${2:variable}",
         "description": "Code snippet for an command function"
     },
     "setvar": {
         "prefix": "setvar",
-        "body": [
-            "setvar \"${1:variable_name}\" $2"
-        ],
+        "body": "setvar \"${1:variable_name}\" ${2:variable_value}",
         "description": "Code snippet for an setvar function"
     },
     "getvar": {
         "prefix": "getvar",
-        "body": [
-            "getvar \"${variable_name}\""
-        ],
+        "body": "getvar \"${variable_name}\"",
         "description": "Code snippet for an getvar function"
     },
+    "defun": {
+        "prefix": "defun",
+        "body": "defun ${1:function_name} (${2:input_args} / )\n\t${3:function_main}\n",
+        "description": "Code snippet for an defun function"
+    },
+    // vl functions
+    "vl-acad-defun": {
+        "prefix"     : "vl-acad-defun",
+        "body"       : "vl-acad-defun '${1:symbol}",
+        "description": "Defines an AutoLISP function symbol as an external subroutine"
+    },
+    "vl-acad-undefun": {
+        "prefix"     : "vl-acad-undefun",
+        "body"       : "vl-acad-undefun '${1:symbol}",
+        "description": "Undefines an AutoLISP function symbol so it is no longer available to ObjectARX applications"
+    },
+    "vl-arx-import": {
+        "prefix"     : "vl-arx-import",
+        "body"       : "vl-arx-import $function",
+        "description": "Imports ObjectARX/ADSRX functions into a separate-namespace VLX"
+    },
+    "vl-bb-ref": {
+        "prefix"     : "vl-bb-ref",
+        "body"       : "vl-bb-ref '${1:variable}",
+        "description": "Returns the value of a variable from the blackboard namespace"
+    },
+    "vl-bb-set": {
+        "prefix"     : "vl-bb-set",
+        "body"       : "vl-bb-set '${1:symbol} ${2:value}",
+        "description": "Sets a variable in the blackboard namespace"
+    },
+    "vl-catch-all-apply": {
+        "prefix"     : "vl-catch-all-apply",
+        "body"       : "vl-catch-all-apply '${1:function} ${2:list}",
+        "description": "Passes a list of arguments to a specified function and traps any exceptions"
+    },
+    "vl-catch-all-error-message": {
+        "prefix"     : "vl-catch-all-error-message",
+        "body"       : "vl-catch-all-error-message ${1:error-obj}",
+        "description": "Returns a string from an error object"
+    },
+    "vl-catch-all-error-p": {
+        "prefix"     : "vl-catch-all-error-p",
+        "body"       : "vl-catch-all-error-p $arg",
+        "description": "Determines whether an argument is an error object returned from vl-catch-all-apply"
+    },
+    "vl-cmdf": {
+        "prefix"     : "vl-cmdf",
+        "body"       : "vl-cmdf ${1:args...}",
+        "description": "Executes an AutoCAD command"
+    },
+    "vl-consp": {
+        "prefix"     : "vl-consp",
+        "body"       : "vl-consp ${1:list-variable}",
+        "description": "Determines whether or not a list is nil"
+    },
+    "vl-directory-files": {
+        "prefix"     : "vl-directory-files",
+        "body"       : "vl-directory-files ${1:directory} ${2:pattern} ${3|-1,0,1|}",
+        "description": "Lists all files in a given directory"
+    },
+    "vl-doc-export": {
+        "prefix"     : "vl-doc-export",
+        "body"       : "vl-doc-export '$function",
+        "description": "Makes a function available to the current document"
+    },
+    "vl-doc-import": {
+        "prefix"     : "vl-doc-import",
+        "body"       : "vl-doc-import ${1:application} '${2:function}",
+        "description": "Imports a previously exported function into a VLX namespace"
+    },
+    "vl-doc-ref": {
+        "prefix"     : "vl-doc-ref",
+        "body"       : "vl-doc-ref '${1:symbol}",
+        "description": "Retrieves the value of a variable from the current document's namespace"
+    },
+    "vl-doc-set": {
+        "prefix"     : "vl-doc-set",
+        "body"       : "vl-doc-set '${1:symbol} ${2:value}",
+        "description": "Sets the value of a variable in the current document's namespace"
+    },
+    "vl-every": {
+        "prefix"     : "vl-every",
+        "body"       : "vl-every ${1:predicate-function} ${2:lists}",
+        "description": "Checks whether the predicate is true for every element combination"
+    },
+    "vl-exit-with-error": {
+        "prefix"     : "vl-exit-with-error",
+        "body"       : "vl-exit-with-error $msg",
+        "description": "Passes control from an error handler to the *error* function of the calling namespace"
+    },
+    "vl-exit-with-value": {
+        "prefix"     : "vl-exit-with-value",
+        "body"       : "vl-exit-with-value $value",
+        "description": "Returns a value to the function that invoked the *error* handler from another namespace"
+    },
+    "vl-file-copy": {
+        "prefix"     : "vl-file-copy",
+        "body"       : "vl-file-copy ${1:source-file} ${2:destination-file} ${3|t,nil|}",
+        "description": "Copies or appends the contents of one file to another file"
+    },
+    "vl-file-delete": {
+        "prefix"     : "vl-file-delete",
+        "body"       : "vl-file-delete $filename",
+        "description": "Deletes a file"
+    },
+    "vl-file-directory-p": {
+        "prefix"     : "vl-file-directory-p",
+        "body"       : "vl-file-directory-p $filename",
+        "description": "Determines if a file name refers to a directory"
+    },
+    "vl-file-rename": {
+        "prefix"     : "vl-file-rename",
+        "body"       : "vl-file-rename ${1:old-filename} ${2:new-filename}",
+        "description": "Renames a file"
+    },
+    "vl-file-size": {
+        "prefix"     : "vl-file-size",
+        "body"       : "vl-file-size $filename",
+        "description": "Determines the size of a file, in bytes"
+    },
+    "vl-file-systime": {
+        "prefix"     : "vl-file-systime",
+        "body"       : "vl-file-systime $filename",
+        "description": "Returns last modification time of the specified file"
+    },
+    "vl-filename-base": {
+        "prefix"     : "vl-filename-base",
+        "body"       : "vl-filename-base $filename",
+        "description": "Returns the name of a file, after stripping out the directory path and extension"
+    },
+    "vl-filename-directory": {
+        "prefix"     : "vl-filename-directory",
+        "body"       : "vl-filename-directory $filename",
+        "description": "Returns the directory path of a file, after stripping out the name and extension"
+    },
+    "vl-filename-extension": {
+        "prefix"     : "vl-filename-extension",
+        "body"       : "vl-filename-extension $filename",
+        "description": "Returns the extension from a file name, after stripping out the rest of the name"
+    },
+    "vl-filename-mktemp": {
+        "prefix"     : "vl-filename-mktemp",
+        "body"       : "vl-filename-mktemp ${1:[pattern directory extension]}",
+        "description": "Calculates a unique file name to be used for a temporary file"
+    },
+    "vl-get-resource": {
+        "prefix"     : "vl-get-resource",
+        "body"       : "vl-get-resource ${1:text-file}",
+        "description": "Returns the text stored in a .txt file packaged in a VLX"
+    },
+    "vl-list*": {
+        "prefix"     : "vl-list*",
+        "body"       : "vl-list* ${1:objects}",
+        "description": "Constructs and returns a list"
+    },
+    "vl-list->string": {
+        "prefix"     : "vl-list->string",
+        "body"       : "vl-list->string ${1:char-codes-list}",
+        "description": "Combines the characters associated with a list of integers into a string"
+    },
+    "vl-list-exported-functions": {
+        "prefix"     : "vl-list-exported-functions",
+        "body"       : "vl-list-exported-functions $appname",
+        "description": "Lists exported functions"
+    },
+    "vl-list-length": {
+        "prefix"     : "vl-list-length",
+        "body"       : "vl-list-length ${1:list-or-cons}",
+        "description": "Calculates list length of a true list"
+    },
+    "vl-list-loaded-vlx": {
+        "prefix"     : "vl-list-loaded-vlx",
+        "body"       : "vl-list-loaded-vlx",
+        "description": "Returns a list of all separate-namespace VLX files associated with the current document"
+    },
+    "vl-load-all": {
+        "prefix"     : "vl-load-all",
+        "body"       : "vl-load-all $filename",
+        "description": "Loads a file into all open AutoCAD documents, and into any document subsequently opened during the current AutoCAD session"
+    },
+    "vl-load-com": {
+        "prefix"     : "vl-load-com",
+        "body"       : "vl-load-com",
+        "description": "Loads the extended AutoLISP functions related to ActiveX support"
+    },
+    "vl-load-reactors": {
+        "prefix"     : "vl-load-reactors",
+        "body"       : "vl-load-reactors",
+        "description": "Loads reactor support functions"
+    },
+    "vl-mkdir": {
+        "prefix"     : "vl-mkdir",
+        "body"       : "vl-mkdir $directoryname",
+        "description": "Creates a directory"
+    },
+    "vl-member-if": {
+        "prefix"     : "vl-member-if",
+        "body"       : "vl-member-if ${1:predicate-function} ${2:list}",
+        "description": "Determines if the predicate is true for one of the list members"
+    },
+    "vl-member-if-not": {
+        "prefix"     : "vl-member-if-not",
+        "body"       : "vl-member-if-not ${1:predicate-function} ${2:list}",
+        "description": "Determines if the predicate is nil for one of the list members"
+    },
+    "vl-position": {
+        "prefix"     : "vl-position",
+        "body"       : "vl-position ${1:symbol} ${2:list}",
+        "description": "Returns the index of the specified list item"
+    },
+    "vl-prin1-to-string": {
+        "prefix"     : "vl-prin1-to-string",
+        "body"       : "vl-prin1-to-string $data",
+        "description": "Returns the string representation of LISP data as if it were output by the prin1 function"
+    },
+    "vl-princ-to-string": {
+        "prefix"     : "vl-princ-to-string",
+        "body"       : "vl-princ-to-string $data",
+        "description": "Returns the string representation of LISP data as if it were output by the princ function"
+    },
+    "vl-propagate": {
+        "prefix"     : "vl-propagate",
+        "body"       : "vl-propagate '${1:symbol}",
+        "description": "Copies the value of a variable into all open document namespaces (and sets its value in any subsequent drawings opened during the current AutoCAD session)"
+    },
+    "vl-registry-delete": {
+        "prefix"     : "vl-registry-delete",
+        "body"       : "vl-registry-delete ${1:reg-key} ${2:[val-name]}",
+        "description": "Deletes the specified key from the Windows Registry or property list file on Mac OS"
+    },
+    "vl-registry-descendents": {
+        "prefix"     : "vl-registry-descendents",
+        "body"       : "vl-registry-descendents ${1:reg-key} ${2:[val-names]}",
+        "description": "Returns a list of subkeys or value names for the specified key of the Windows Registry or property list file on Mac OS"
+    },
+    "vl-registry-read": {
+        "prefix"     : "vl-registry-read",
+        "body"       : "vl-registry-read ${1:reg-key} ${2:[val-name]}",
+        "description": "Returns data stored by a specific key/value pair in the Windows Registry or property list file on Mac OS"
+    },
+    "vl-registry-write": {
+        "prefix"     : "vl-registry-write",
+        "body"       : "vl-registry-write ${1:reg-key} ${2:[val-name val-data]}",
+        "description": "Creates a key in the Windows Registry or property list file on Mac OS"
+    },
+    "vl-remove": {
+        "prefix"     : "vl-remove",
+        "body"       : "vl-remove ${1:element-to-remove} ${2:list}",
+        "description": "Removes elements from a list"
+    },
+    "vl-remove-if": {
+        "prefix"     : "vl-remove-if",
+        "body"       : "vl-remove-if ${1:predicate-function} ${2:list}",
+        "description": "Returns all elements of the supplied list that fail the test function"
+    },
+    "vl-remove-if-not": {
+        "prefix"     : "vl-remove-if-not",
+        "body"       : "vl-remove-if-not ${1:predicate-function} ${2:list}",
+        "description": "Returns all elements of the supplied list that pass the test function"
+    },
+    "vl-some": {
+        "prefix"     : "vl-some",
+        "body"       : "vl-some ${1:predicate-function} ${2:lists}",
+        "description": "Checks whether the predicate is not nil for one element combination"
+    },
+    "vl-sort": {
+        "prefix"     : "vl-sort",
+        "body"       : "vl-sort ${1:list} ${2:comparison-function}",
+        "description": "Sorts the elements in a list according to a given compare function"
+    },
+    "vl-sort-i": {
+        "prefix"     : "vl-sort-i",
+        "body"       : "vl-sort-i ${1:list} ${2:comparison-function}",
+        "description": "Sorts the elements in a list according to a given compare function, and returns the element index numbers"
+    },
+    "vl-string->list": {
+        "prefix"     : "vl-string->list",
+        "body"       : "vl-string->list $str",
+        "description": "Converts a string into a list of character codes"
+    },
+    "vl-string-elt": {
+        "prefix"     : "vl-string-elt",
+        "body"       : "vl-string-elt ${1:str} ${2:position}",
+        "description": "Returns the ASCII representation of the character at a specified position in a string"
+    },
+    "vl-string-left-trim": {
+        "prefix"     : "vl-string-left-trim",
+        "body"       : "vl-string-left-trim ${1:character-set} ${2:str}",
+        "description": "Removes the specified characters from the beginning of a string"
+    },
+    "vl-string-mismatch": {
+        "prefix"     : "vl-string-mismatch",
+        "body"       : "vl-string-mismatch ${1:str1} ${2:str2} ${3:[pos1 pos2 ignore-case-p]}",
+        "description": "Returns the length of the longest common prefix for two strings, starting at specified positions"
+    },
+    "vl-string-position": {
+        "prefix"     : "vl-string-position",
+        "body"       : "vl-string-position ${1:char-code} ${2:str} ${3:[start-pos [from-end-p]]}",
+        "description": "Looks for a character with the specified ASCII code in a string"
+    },
+    "vl-string-right-trim": {
+        "prefix"     : "vl-string-right-trim",
+        "body"       : "vl-string-right-trim ${1:character-set} ${2:str}",
+        "description": "Removes the specified characters from the end of a string"
+    },
+    "vl-string-search": {
+        "prefix"     : "vl-string-search",
+        "body"       : "vl-string-search ${1:pattern} ${2:str} ${3:[start-pos]}",
+        "description": "Searches for the specified pattern in a string"
+    },
+    "vl-string-subst": {
+        "prefix"     : "vl-string-subst",
+        "body"       : "vl-string-subst ${1:new-str} ${2:pattern} ${3:str} ${4:[start-pos]}",
+        "description": "Substitutes one string for another, within a string"
+    },
+    "vl-string-translate": {
+        "prefix"     : "vl-string-translate",
+        "body"       : "vl-string-translate ${1:source-set} ${2:dest-set} ${3:str}",
+        "description": "Replaces characters in a string with a specified set of characters"
+    },
+    "vl-string-trim": {
+        "prefix"     : "vl-string-trim",
+        "body"       : "vl-string-trim ${1:char-set} ${2:str}",
+        "description": "Removes the specified characters from the beginning and end of a string"
+    },
+    "vl-symbol-name": {
+        "prefix"     : "vl-symbol-name",
+        "body"       : "vl-symbol-name '${1:symbol}",
+        "description": "Returns a string containing the name of a symbol"
+    },
+    "vl-symbol-value": {
+        "prefix"     : "vl-symbol-value",
+        "body"       : "vl-symbol-value '${1:symbol}",
+        "description": "Returns the current value bound to a symbol"
+    },
+    "vl-symbolp": {
+        "prefix"     : "vl-symbolp",
+        "body"       : "vl-symbolp $object",
+        "description": "Identifies whether or not a specified object is a symbol"
+    },
+    "vl-unload-vlx": {
+        "prefix"     : "vl-unload-vlx",
+        "body"       : "vl-unload-vlx $appname",
+        "description": "Unload a VLX application that is loaded in its own namespace"
+    },
+    "vl-vbaload": {
+        "prefix"     : "vl-vbaload",
+        "body"       : "vl-vbaload $filename",
+        "description": "Loads a VBA project"
+    },
+    "vl-vbarun": {
+        "prefix"     : "vl-vbarun",
+        "body"       : "vl-vbarun $macroname",
+        "description": "Runs a VBA macro"
+    },
+    "vl-vlx-loaded-p": {
+        "prefix"     : "vl-vlx-loaded-p",
+        "body"       : "vl-vlx-loaded-p $appname",
+        "description": "Determines whether a separate-namespace VLX is currently loaded"
+    },
+    // vlax functions
+    "vlax-3D-point": {
+        "prefix": "vlax-3D-point",
+        "body": "vlax-3D-point ${1:list}",
+        "description": "Creates ActiveX-compatible (variant) 3D point structure"
+    },
+    "vlax-add-cmd": {
+        "prefix": "vlax-add-cmd",
+        "body": "vlax-add-cmd ${1:global-name} ${2:func-sym}",
+        "description": "Adds commands to the AutoCAD built-in command set"
+    },
+    "vlax-create-object": {
+        "prefix": "vlax-create-object",
+        "body": "vlax-create-object ${1:prog-id}",
+        "description": "Creates a new instance of an application object"
+    },
+    "vlax-curve-getArea": {
+        "prefix": "vlax-curve-getArea",
+        "body": "vlax-curve-getArea ${1:curve-obj}",
+        "description": "Returns the area inside the curve"
+    },
+    "vlax-curve-getClosestPointTo": {
+        "prefix": "vlax-curve-getClosestPointTo",
+        "body": "vlax-curve-getClosestPointTo ${1:curve-obj} ${2:givenPoint} ${3|t,nil|}",
+        "description": "Returns the point (in WCS) on a curve that is nearest to the specified point"
+    },
+    "vlax-curve-getClosestPointToProjection": {
+        "prefix": "vlax-curve-getClosestPointToProjection",
+        "body": "vlax-curve-getClosestPointToProjection ${1:curve-obj} ${2:givenPoint} ${3:normal} ${4|t,nil|}",
+        "description": ""
+    },
+    "vlax-curve-getDistAtParam": {
+        "prefix": "vlax-curve-getDistAtParam",
+        "body": "vlax-curve-getDistAtParam",
+        "description": ""
+    },
+    "vlax-curve-getDistAtPoint": {
+        "prefix": "vlax-curve-getDistAtPoint",
+        "body": "vlax-curve-getDistAtPoint",
+        "description": ""
+    },
+    "vlax-curve-getEndParam": {
+        "prefix": "vlax-curve-getEndParam",
+        "body": "vlax-curve-getEndParam",
+        "description": ""
+    },
+    "vlax-curve-getEndPoint": {
+        "prefix": "vlax-curve-getEndPoint",
+        "body": "vlax-curve-getEndPoint",
+        "description": ""
+    },
+    "vlax-curve-getFirstDeriv": {
+        "prefix": "vlax-curve-getFirstDeriv",
+        "body": "vlax-curve-getFirstDeriv",
+        "description": ""
+    },
+    "vlax-curve-getParamAtDist": {
+        "prefix": "vlax-curve-getParamAtDist",
+        "body": "vlax-curve-getParamAtDist",
+        "description": ""
+    },
+    "vlax-curve-getParamAtPoint": {
+        "prefix": "vlax-curve-getParamAtPoint",
+        "body": "vlax-curve-getParamAtPoint",
+        "description": ""
+    },
+    "vlax-curve-getPointAtDist": {
+        "prefix": "vlax-curve-getPointAtDist",
+        "body": "vlax-curve-getPointAtDist",
+        "description": ""
+    },
+    "vlax-curve-getPointAtParam": {
+        "prefix": "vlax-curve-getPointAtParam",
+        "body": "vlax-curve-getPointAtParam",
+        "description": ""
+    },
+    "vlax-curve-getSecondDeriv": {
+        "prefix": "vlax-curve-getSecondDeriv",
+        "body": "vlax-curve-getSecondDeriv",
+        "description": ""
+    },
+    "vlax-curve-getStartParam": {
+        "prefix": "vlax-curve-getStartParam",
+        "body": "vlax-curve-getStartParam",
+        "description": ""
+    },
+    "vlax-curve-getStartPoint": {
+        "prefix": "vlax-curve-getStartPoint",
+        "body": "vlax-curve-getStartPoint",
+        "description": ""
+    },
+    "vlax-curve-isClosed": {
+        "prefix": "vlax-curve-isClosed",
+        "body": "vlax-curve-isClosed",
+        "description": ""
+    },
+    "vlax-curve-isPeriodic": {
+        "prefix": "vlax-curve-isPeriodic",
+        "body": "vlax-curve-isPeriodic",
+        "description": ""
+    },
+    "vlax-curve-isPlanar": {
+        "prefix": "vlax-curve-isPlanar",
+        "body": "vlax-curve-isPlanar",
+        "description": ""
+    },
+    "vlax-dump-object": {
+        "prefix": "vlax-dump-object",
+        "body": "vlax-dump-object ${1:target_object} ${2|t,nil|}",
+        "description": "Lists an object's properties, and optionally, the methods that apply to the object"
+    },
+    "vlax-ename->vla-object": {
+        "prefix": "vlax-ename->vla-object",
+        "body": "vlax-ename->vla-object ${1:entname}",
+        "description": "Transforms an entity to a VLA-object"
+    },
+    "vlax-erased-p": {
+        "prefix": "vlax-erased-p",
+        "body": "vlax-erased-p",
+        "description": ""
+    },
+    "vlax-for": {
+        "prefix": "vlax-for",
+        "body": "vlax-for ${1:symbol} ${2:collection}\n\t${3:expression}\n",
+        "description": "Iterates through a collection of objects, evaluating each expression"
+    },
+    "vlax-get-acad-object": {
+        "prefix": "vlax-get-acad-object",
+        "body": "vlax-get-acad-object",
+        "description": "Retrieves the top level AutoCAD application object for the current AutoCAD session"
+    },
+    "vlax-get-object": {
+        "prefix": "vlax-get-object",
+        "body": "vlax-get-object ${1:prog-id}",
+        "description": "Returns a running instance of an application object"
+    },
+    "vlax-get-or-create-object": {
+        "prefix": "vlax-get-or-create-object",
+        "body": "vlax-get-or-create-object ${1:prog-id}",
+        "description": "Returns a running instance of an application object, or creates a new instance if the application is not currently running"
+    },
+    "vlax-get-property": {
+        "prefix": "vlax-get-property",
+        "body": "vlax-get-property ${1:object} ${2:property}",
+        "description": "Retrieves a VLA-object's property"
+    },
+    "vlax-import-type-library": {
+        "prefix": "vlax-import-type-library",
+        "body": "vlax-import-type-library",
+        "description": ""
+    },
+    "vlax-invoke-method": {
+        "prefix": "vlax-invoke-method",
+        "body": "vlax-invoke-method ${1:obj} ${2:method} ${3:arg}",
+        "description": "Calls the specified ActiveX method"
+    },
+    "vlax-ldata-delete": {
+        "prefix": "vlax-ldata-delete",
+        "body": "vlax-ldata-delete",
+        "description": ""
+    },
+    "vlax-ldata-get": {
+        "prefix": "vlax-ldata-get",
+        "body": "vlax-ldata-get",
+        "description": ""
+    },
+    "vlax-ldata-list": {
+        "prefix": "vlax-ldata-list",
+        "body": "vlax-ldata-list",
+        "description": ""
+    },
+    "vlax-ldata-put": {
+        "prefix": "vlax-ldata-put",
+        "body": "vlax-ldata-put",
+        "description": ""
+    },
+    "vlax-ldata-test": {
+        "prefix": "vlax-ldata-test",
+        "body": "vlax-ldata-test",
+        "description": ""
+    },
+    "vlax-machine-product-key": {
+        "prefix": "vlax-machine-product-key",
+        "body": "vlax-machine-product-key",
+        "description": ""
+    },
+    "vlax-make-safearray": {
+        "prefix": "vlax-make-safearray",
+        "body": "vlax-make-safearray",
+        "description": ""
+    },
+    "vlax-make-variant": {
+        "prefix": "vlax-make-variant",
+        "body": "vlax-make-variant",
+        "description": ""
+    },
+    "vlax-map-collection": {
+        "prefix": "vlax-map-collection",
+        "body": "vlax-map-collection",
+        "description": ""
+    },
+    "vlax-method-applicable-p": {
+        "prefix": "vlax-method-applicable-p",
+        "body": "vlax-method-applicable-p",
+        "description": ""
+    },
+    "vlax-object-released-p": {
+        "prefix": "vlax-object-released-p",
+        "body": "vlax-object-released-p",
+        "description": ""
+    },
+    "vlax-product-key": {
+        "prefix": "vlax-product-key",
+        "body": "vlax-product-key",
+        "description": ""
+    },
+    "vlax-property-available-p": {
+        "prefix": "vlax-property-available-p",
+        "body": "vlax-property-available-p",
+        "description": ""
+    },
+    "vlax-put-property": {
+        "prefix": "vlax-put-property",
+        "body"  : "vlax-put-property ${1:obj} ${2:property} ${3:arg}",
+        "description": "Sets the property of an ActiveX object"
+    },
+    "vlax-read-enabled-p": {
+        "prefix": "vlax-read-enabled-p",
+        "body": "vlax-read-enabled-p",
+        "description": ""
+    },
+    "vlax-release-object": {
+        "prefix": "vlax-release-object",
+        "body": "vlax-release-object ${1:obj}",
+        "description": "Releases a drawing object"
+    },
+    "vlax-remove-cmd": {
+        "prefix": "vlax-remove-cmd",
+        "body": "vlax-remove-cmd",
+        "description": ""
+    },
+    "vlax-safearray-fill": {
+        "prefix": "vlax-safearray-fill",
+        "body": "vlax-safearray-fill",
+        "description": ""
+    },
+    "vlax-safearray-get-dim": {
+        "prefix": "vlax-safearray-get-dim",
+        "body": "vlax-safearray-get-dim",
+        "description": ""
+    },
+    "vlax-safearray-get-element": {
+        "prefix": "vlax-safearray-get-element",
+        "body": "vlax-safearray-get-element",
+        "description": ""
+    },
+    "vlax-safearray-get-l-bound": {
+        "prefix": "vlax-safearray-get-l-bound",
+        "body": "vlax-safearray-get-l-bound",
+        "description": ""
+    },
+    "vlax-safearray-get-u-bound": {
+        "prefix": "vlax-safearray-get-u-bound",
+        "body": "vlax-safearray-get-u-bound",
+        "description": ""
+    },
+    "vlax-safearray-put-element": {
+        "prefix": "vlax-safearray-put-element",
+        "body": "vlax-safearray-put-element",
+        "description": ""
+    },
+    "vlax-safearray-type": {
+        "prefix": "vlax-safearray-type",
+        "body"  : "vlax-safearray-type",
+        "description": ""
+    },
+    "vlax-safearray->list": {
+        "prefix": "vlax-safearray->list",
+        "body"  : "vlax-safearray->list",
+        "description": ""
+    },
+    "vlax-tmatrix": {
+        "prefix": "vlax-tmatrix",
+        "body"  : "vlax-tmatrix",
+        "description": ""
+    },
+    "vlax-typeinfo-available-p": {
+        "prefix": "vlax-typeinfo-available-p",
+        "body"  : "vlax-typeinfo-available-p",
+        "description": ""
+    },
+    "vlax-variant-change-type": {
+        "prefix": "vlax-variant-change-type",
+        "body"  : "vlax-variant-change-type",
+        "description": ""
+    },
+    "vlax-variant-type": {
+        "prefix": "vlax-variant-type",
+        "body"  : "vlax-variant-type",
+        "description": ""
+    },
+    "vlax-variant-value": {
+        "prefix": "vlax-variant-value",
+        "body"  : "vlax-variant-value",
+        "description": ""
+    },
+    "vlax-vla-object->ename": {
+        "prefix": "vlax-vla-object->ename",
+        "body"  : "vlax-vla-object->ename ${1:obj}",
+        "description": "Transforms a VLA-object to an AutoLISP entity"
+    },
+    "vlax-write-enabled-p": {
+        "prefix": "vlax-write-enabled-p",
+        "body"  : "vlax-write-enabled-p",
+        "description": ""
+    }
 }
