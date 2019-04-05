@@ -261,12 +261,12 @@
     },
     "defun-q": {
         "prefix" : "defun-q",
-        "body" : "defun-q ${1:sym} (${2:[arguments/variables...]}) ${3:expr...}",
+        "body" : "defun-q ${1:sym}\n\t(\n\t\t${2:[arguments...]}\n\t\t/\n\t\t${3:[variables...]}\n\t)\n\t${4:[expr...]}\n",
         "description" : "Defines a function as a list"
     },
     "defun": {
         "prefix" : "defun",
-        "body" : "defun ${1:sym} (${2:[arguments/variables...]}) ${3:expr...}",
+        "body" : "defun ${1:sym}\n\t(\n\t\t${2:[arguments...]}\n\t\t/\n\t\t${3:[variables...]}\n\t)\n\t${4:[expr...]}\n",
         "description" : "Defines a function"
     },
     "dictadd": {
