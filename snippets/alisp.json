@@ -1,694 +1,2082 @@
 {
+    "abs": {
+        "prefix" : "abs",
+        "body" : "abs ${1:number}",
+        "description" : "Returns the absolute value of a number"
+    },
+    "acad-pop-dbmod": {
+        "prefix" : "acad-pop-dbmod",
+        "body" : "acad-pop-dbmod",
+        "description" : "Restores the value of the DBMOD system variable to the value that was most recently stored with acad-push-dbmod    "
+    },
+    "acad-push-dbmod": {
+        "prefix" : "acad-push-dbmod",
+        "body" : "acad-push-dbmod",
+        "description" : "Stores the current value of the DBMOD system variable"
+    },
+    "acad_colordlg": {
+        "prefix" : "acad_colordlg",
+        "body" : "acad_colordlg ${1:colornum} ${2:[flag]}",
+        "description" : "Displays the standard AutoCAD color selection dialog box"
+    },
+    "acad_helpdlg": {
+        "prefix" : "acad_helpdlg",
+        "body" : "acad_helpdlg ${1:helpfile} ${2:topic}",
+        "description" : "Invokes the help facility (obsolete)"
+    },
+    "acad_strlsort": {
+        "prefix" : "acad_strlsort",
+        "body" : "acad_strlsort ${1:list}",
+        "description" : "Sorts a list of strings in alphabetical order"
+    },
+    "acdimenableupdate": {
+        "prefix" : "acdimenableupdate",
+        "body" : "acdimenableupdate ${1:flag}",
+        "description" : "Controls the automatic updating of associative dimensions"
+    },
+    "acet-layerp-mark": {
+        "prefix" : "acet-layerp-mark",
+        "body" : "acet-layerp-mark ${1:[status]}",
+        "description" : "Places beginning and ending marks for Layer Previous recording"
+    },
+    "acet-layerp-mode": {
+        "prefix" : "acet-layerp-mode",
+        "body" : "acet-layerp-mode ${1:[status]}",
+        "description" : "Queries and sets the LAYERPMODE setting"
+    },
+    "acet-laytrans": {
+        "prefix" : "acet-laytrans",
+        "body" : "acet-laytrans ${1:filename} ${2:[settings]}",
+        "description" : "Translates drawing layers to standards defined in another drawing or standards file"
+    },
+    "acet-ms-to-ps": {
+        "prefix" : "acet-ms-to-ps",
+        "body" : "acet-ms-to-ps ${1:[value]} ${2:[viewport]}",
+        "description" : "Converts a real value from model space units to paper space units"
+    },
+    "acet-ps-to-ms": {
+        "prefix" : "acet-ps-to-ms",
+        "body" : "acet-ps-to-ms ${1:[value]} ${2:[viewport]}",
+        "description" : "Converts a real value from paper space units to model space units"
+    },
+    "action_tile": {
+        "prefix" : "action_tile",
+        "body" : "action_tile ${1:key} ${2:action-expression}",
+        "description" : "Assigns an action to evaluate when the user selects the specified tile in a dialog box"
+    },
+    "+": {
+        "prefix" : "+",
+        "body" : "+ ${1:[numbers...}",
+        "description" : "Returns the sum of all numbers"
+    },
+    "add_list": {
+        "prefix" : "add_list",
+        "body" : "add_list ${1:str}",
+        "description" : "Adds or modifies a string in the currently active dialog box list"
+    },
+    "alert": {
+        "prefix" : "alert",
+        "body" : "alert ${1:msg}",
+        "description" : "Displays a dialog box containing an error or warning message"
+    },
+    "alloc": {
+        "prefix" : "alloc",
+        "body" : "alloc ${1:n-alloc}",
+        "description" : "Sets the size of the segment to be used by the expand function"
+    },
+    "and": {
+        "prefix" : "and",
+        "body" : "and ${1:[expr...]}",
+        "description" : "Returns the logical AND of the supplied arguments"
+    },
+    "angle": {
+        "prefix" : "angle",
+        "body" : "angle ${1:pt1} ${2:pt2}",
+        "description" : "Returns an angle in radians of a line defined by two endpoints"
+    },
+    "angtof": {
+        "prefix" : "angtof",
+        "body" : "angtof ${1:string} ${2:[units]}",
+        "description" : "Converts a string representing an angle into a real (floating-point) value in radians"
+    },
+    "angtos": {
+        "prefix" : "angtos",
+        "body" : "angtos ${1:angle} ${2:[unit [precision]]}",
+        "description" : "Converts an angular value in radians into a string"
+    },
+    "append": {
+        "prefix" : "append",
+        "body" : "append ${1:[lists...]}",
+        "description" : "Takes any number of lists and appends them together as one list"
+    },
+    "apply": {
+        "prefix" : "apply",
+        "body" : "apply '${1:function} ${2:list}",
+        "description" : "Passes a list of arguments to, and executes, a specified function"
+    },
+    "arxload": {
+        "prefix" : "arxload",
+        "body" : "arxload ${1:application} ${2:[onfailure]}",
+        "description" : "Loads an ObjectARX application"
+    },
+    "arxunload": {
+        "prefix" : "arxunload",
+        "body" : "arxunload ${1:application} ${2:[onfailure]}",
+        "description" : "Unloads an ObjectARX application"
+    },
+    "ascii": {
+        "prefix" : "ascii",
+        "body" : "ascii ${1:str}",
+        "description" : "Returns the conversion of the first character of a string into its ASCII character code (an integer)"
+    },
+    "assoc": {
+        "prefix" : "assoc",
+        "body" : "assoc ${1:element} ${2:alist}",
+        "description" : "Searches an association list for an element and returns that association list entry"
+    },
+    "atan": {
+        "prefix" : "atan",
+        "body" : "atan ${1:num1} ${2:[num2]}",
+        "description" : "Returns the arctangent of a number in radians"
+    },
+    "atof": {
+        "prefix" : "atof",
+        "body" : "atof ${1:str}",
+        "description" : "Converts a string into a real number"
+    },
+    "atoi": {
+        "prefix" : "atoi",
+        "body" : "atoi ${1:str}",
+        "description" : "Converts a string into an integer"
+    },
+    "atom": {
+        "prefix" : "atom",
+        "body" : "atom ${1:item}",
+        "description" : "Verifies that an item is an atom"
+    },
+    "atoms-family": {
+        "prefix" : "atoms-family",
+        "body" : "atoms-family ${1:format} ${2:[symlist]}",
+        "description" : "Returns a list of the currently defined symbols"
+    },
+    "autoarxload": {
+        "prefix" : "autoarxload",
+        "body" : "autoarxload ${1:filename} ${2:cmdlist}",
+        "description" : "Predefines command names to load an associated ObjectARX file"
+    },
+    "autoload": {
+        "prefix" : "autoload",
+        "body" : "autoload ${1:filename} ${2:cmdlist}",
+        "description" : "Predefines command names to load an associated AutoLISP file"
+    },
+    "~": {
+        "prefix" : "~",
+        "body" : "~ ${1:int}",
+        "description" : "Returns the bitwise NOT (1's complement) of the argument"
+    },
+    "boole": {
+        "prefix" : "boole",
+        "body" : "boole ${1:operator} ${2:int1} ${3:[int2...]}",
+        "description" : "Serves as a general bitwise Boolean function"
+    },
+    "boundp": {
+        "prefix" : "boundp",
+        "body" : "boundp ${1:sym}",
+        "description" : "Verifies if a value is bound to a symbol"
+    },
+    "caddr": {
+        "prefix" : "caddr",
+        "body" : "caddr ${1:list}",
+        "description" : "Returns the third element of a list"
+    },
+    "cadr": {
+        "prefix" : "cadr",
+        "body" : "cadr ${1:list}",
+        "description" : "Returns the second element of a list"
+    },
+    "car": {
+        "prefix" : "car",
+        "body" : "car ${1:list}",
+        "description" : "Returns the first element of a list"
+    },
+    "cdr": {
+        "prefix" : "cdr",
+        "body" : "cdr ${1:list}",
+        "description" : "Returns a list containing all but the first element of the specified list"
+    },
+    "chr": {
+        "prefix" : "chr",
+        "body" : "chr ${1:int}",
+        "description" : "Converts an integer representing an ASCII character code into a single-character string"
+    },
+    "client_data_tile": {
+        "prefix" : "client_data_tile",
+        "body" : "client_data_tile ${1:key} ${2:clientdata}",
+        "description" : "Associates application-managed data with a dialog box tile"
+    },
+    "command-s": {
+        "prefix" : "command-s",
+        "body" : "command-s ${1:[cmdname [arguments...]]}",
+        "description" : "Executes an AutoCAD command and the supplied input"
+    },
     "command": {
-        "prefix": "command",
-        "body": "command \"${1:command_name}\" ${2:variable}",
-        "description": "Code snippet for an command function"
+        "prefix" : "command",
+        "body" : "command ${1:[cmdname [arguments...]]}",
+        "description" : "Executes an AutoCAD command"
     },
-    "setvar": {
-        "prefix": "setvar",
-        "body": "setvar \"${1:variable_name}\" ${2:variable_value}",
-        "description": "Code snippet for an setvar function"
+    "cond": {
+        "prefix" : "cond",
+        "body" : "cond ((${1:test}) (${2:result})) ${3:[((test) (result))...]}",
+        "description" : "Serves as the primary conditional function for AutoLISP"
     },
-    "getvar": {
-        "prefix": "getvar",
-        "body": "getvar \"${variable_name}\"",
-        "description": "Code snippet for an getvar function"
+    "cons": {
+        "prefix" : "cons",
+        "body" : "cons ${1:new-first-element} ${2:list-or-atom}",
+        "description" : "Adds an element to the beginning of a list, or constructs a dotted list"
+    },
+    "cos": {
+        "prefix" : "cos",
+        "body" : "cos ${1:ang}",
+        "description" : "Returns the cosine of an angle expressed in radians"
+    },
+    "cvunit": {
+        "prefix" : "cvunit",
+        "body" : "cvunit ${1:value} ${2:from-unit} ${3:to-unit}",
+        "description" : "Converts a value from one unit of measurement to another"
+    },
+    "1-": {
+        "prefix" : "1-",
+        "body" : "1- ${1:number}",
+        "description" : "Decrements a number by 1"
+    },
+    "defun-q-list-ref": {
+        "prefix" : "defun-q-list-ref",
+        "body" : "defun-q-list-ref '${1:function}",
+        "description" : "Displays the list structure of a function defined with defun-q"
+    },
+    "defun-q-list-set": {
+        "prefix" : "defun-q-list-set",
+        "body" : "defun-q-list-set '${1:sym} ${2:list}",
+        "description" : "Sets the value of a symbol to be a function defined by a list"
+    },
+    "defun-q": {
+        "prefix" : "defun-q",
+        "body" : "defun-q ${1:sym} (${2:[arguments/variables...]}) ${3:expr...}",
+        "description" : "Defines a function as a list"
     },
     "defun": {
-        "prefix": "defun",
-        "body": "defun ${1:function_name} (${2:input_args} / )\n\t${3:function_main}\n",
-        "description": "Code snippet for an defun function"
+        "prefix" : "defun",
+        "body" : "defun ${1:sym} (${2:[arguments/variables...]}) ${3:expr...}",
+        "description" : "Defines a function"
     },
-    // vl functions
+    "dictadd": {
+        "prefix" : "dictadd",
+        "body" : "dictadd ${1:ename} ${2:symbol} ${3:newobj}",
+        "description" : "Adds a nongraphical object to the specified dictionary"
+    },
+    "dictnext": {
+        "prefix" : "dictnext",
+        "body" : "dictnext ${1:ename} ${2:[rewind]}",
+        "description" : "Finds the next item in a dictionary"
+    },
+    "dictremove": {
+        "prefix" : "dictremove",
+        "body" : "dictremove ${1:ename} ${2:symbol}",
+        "description" : "Removes an entry from the specified dictionary"
+    },
+    "dictrename": {
+        "prefix" : "dictrename",
+        "body" : "dictrename ${1:ename} ${2:oldsym} ${3:newsym}",
+        "description" : "Renames a dictionary entry"
+    },
+    "dictsearch": {
+        "prefix" : "dictsearch",
+        "body" : "dictsearch ${1:ename} ${2:symbol} ${3:[setnext]}",
+        "description" : "Searches a dictionary for an item"
+    },
+    "dimx_tile": {
+        "prefix" : "dimx_tile",
+        "body" : "dimx_tile ${1:key}",
+        "description" : "Retrieves the width of a tile in dialog box units"
+    },
+    "distof": {
+        "prefix" : "distof",
+        "body" : "distof ${1:str} ${2:[mode]}",
+        "description" : "Converts a string that represents a real (floating-point) value into a real value"
+    },
+    "done_dialog": {
+        "prefix" : "done_dialog",
+        "body" : "done_dialog ${1:[status]}",
+        "description" : "Terminates a dialog box"
+    },
+    "dumpallproperties": {
+        "prefix" : "dumpallproperties",
+        "body" : "dumpallproperties ${1:ename} ${2:[context]}",
+        "description" : "Retrieves an entity¡¯s supported properties"
+    },
+    "end_image": {
+        "prefix" : "end_image",
+        "body" : "end_image",
+        "description" : "Ends creation of the currently active dialog box image"
+    },
+    "end_list": {
+        "prefix" : "end_list",
+        "body" : "end_list",
+        "description" : "Ends processing of the currently active dialog box list"
+    },
+    "entdel": {
+        "prefix" : "entdel",
+        "body" : "entdel ${1:ename}",
+        "description" : "Deletes objects (entities) or restores previously deleted objects"
+    },
+    "entget": {
+        "prefix" : "entget",
+        "body" : "entget ${1:ename} ${2:[applist]}",
+        "description" : "Retrieves an object's (entity's) definition data"
+    },
+    "entlast": {
+        "prefix" : "entlast",
+        "body" : "entlast",
+        "description" : "Returns the name of the last nondeleted main object (entity) in the drawing"
+    },
+    "entmake": {
+        "prefix" : "entmake",
+        "body" : "entmake ${1:[elist]}",
+        "description" : "Creates a new entity in the drawing"
+    },
+    "entmakex": {
+        "prefix" : "entmakex",
+        "body" : "entmakex ${1:[elist]}",
+        "description" : "Makes a new object or entity, gives it a handle and entity name (but does not assign an owner), and then returns the new entity name"
+    },
+    "entmod": {
+        "prefix" : "entmod",
+        "body" : "entmod ${1:elist}",
+        "description" : "Modifies the definition data of an object (entity)"
+    },
+    "entnext": {
+        "prefix" : "entnext",
+        "body" : "entnext ${1:[ename]}",
+        "description" : "Returns the name of the next object (entity) in the drawing"
+    },
+    "entsel": {
+        "prefix" : "entsel",
+        "body" : "entsel ${1:[msg]}",
+        "description" : "Prompts the user to select a single object (entity) by specifying a point"
+    },
+    "entupd": {
+        "prefix" : "entupd",
+        "body" : "entupd ${1:ename}",
+        "description" : "Updates the screen image of an object (entity)"
+    },
+    "eq": {
+        "prefix" : "eq",
+        "body" : "eq ${1:expr1} ${2:expr2}",
+        "description" : "Determines whether two expressions are identical"
+    },
+    "equal": {
+        "prefix" : "equal",
+        "body" : "equal ${1:expr1} ${2:expr2} ${3:[fuzz]}",
+        "description" : "Determines whether two expressions are equal"
+    },
+    "*error*": {
+        "prefix" : "*error*",
+        "body" : "*error* ${1:string}",
+        "description" : "A user-definable error-handling function"
+    },
+    "eval": {
+        "prefix" : "eval",
+        "body" : "eval ${1:expr}",
+        "description" : "Returns the result of evaluating an AutoLISP expression"
+    },
+    "exit": {
+        "prefix" : "exit",
+        "body" : "exit",
+        "description" : "Forces the current application to quit"
+    },
+    "exp": {
+        "prefix" : "exp",
+        "body" : "exp ${1:num}",
+        "description" : "Returns the constant e (a real number) raised to a specified power (the natural antilog)"
+    },
+    "expand": {
+        "prefix" : "expand",
+        "body" : "expand ${1:n-expand}",
+        "description" : "Allocates additional memory for AutoLISP"
+    },
+    "expt": {
+        "prefix" : "expt",
+        "body" : "expt ${1:number} ${2:power}",
+        "description" : "Returns a number raised to a specified power"
+    },
+    "fill_image": {
+        "prefix" : "fill_image",
+        "body" : "fill_image ${1:x1} ${2:y1} ${3:width} ${4:height} ${5:color}",
+        "description" : "Draws a filled rectangle in the currently active dialog box image tile"
+    },
+    "findfile": {
+        "prefix" : "findfile",
+        "body" : "findfile ${1:filename}",
+        "description" : "Searches the AutoCAD library and trusted paths for the specified file or directory"
+    },
+    "findtrustedfile": {
+        "prefix" : "findtrustedfile",
+        "body" : "findtrustedfile ${1:filename}",
+        "description" : "Searches the AutoCAD trusted locations for the specified file"
+    },
+    "fix": {
+        "prefix" : "fix",
+        "body" : "fix ${1:number}",
+        "description" : "Returns the conversion of a real number into the nearest smaller integer"
+    },
+    "float": {
+        "prefix" : "float",
+        "body" : "float ${1:number}",
+        "description" : "Returns the conversion of a number into a real number"
+    },
+    "foreach": {
+        "prefix" : "foreach",
+        "body" : "foreach ${1:name} ${2:list} ${3:[expr...]}",
+        "description" : "Evaluates expressions for all members of a list"
+    },
+    "function": {
+        "prefix" : "function",
+        "body" : "function ${1:symbol-or-lambda-expr}",
+        "description" : "Tells the Visual LISP compiler to link and optimize an argument as if it were a built-in function"
+    },
+    "gc": {
+        "prefix" : "gc",
+        "body" : "gc",
+        "description" : "Forces a garbage collection, which frees up unused memory"
+    },
+    "gcd": {
+        "prefix" : "gcd",
+        "body" : "gcd ${1:int1} ${2:int2}",
+        "description" : "Returns the greatest common denominator of two integers"
+    },
+    "getangle": {
+        "prefix" : "getangle",
+        "body" : "getangle ${1:[pt]} ${2:[msg]}",
+        "description" : "Pauses for user input of an angle, and returns that angle in radians"
+    },
+    "getcfg": {
+        "prefix" : "getcfg",
+        "body" : "getcfg ${1:cfgname}",
+        "description" : "Obsolete. Retrieves application data from the AppData section of the acad20xx.cfg file"
+    },
+    "getcname": {
+        "prefix" : "getcname",
+        "body" : "getcname ${1:cname}",
+        "description" : "Retrieves the localized or English name of an AutoCAD command"
+    },
+    "getcorner": {
+        "prefix" : "getcorner",
+        "body" : "getcorner ${1:pt} ${2:[msg]}",
+        "description" : "Pauses for user input of a rectangle's second corner"
+    },
+    "getdist": {
+        "prefix" : "getdist",
+        "body" : "getdist ${1:[pt]} ${2:[msg]}",
+        "description" : "Pauses for user input of a distance"
+    },
+    "getenv": {
+        "prefix" : "getenv",
+        "body" : "getenv ${1:variable-name}",
+        "description" : "Returns the string value assigned to a system environment variable"
+    },
+    "getfiled": {
+        "prefix" : "getfiled",
+        "body" : "getfiled ${1:title} ${2:default} ${3:ext} ${4:flags}",
+        "description" : "Prompts the user for a file name with the standard AutoCAD file dialog box, and returns that file name"
+    },
+    "getint": {
+        "prefix" : "getint",
+        "body" : "getint ${1:[msg]}",
+        "description" : "Pauses for user input of an integer, and returns that integer"
+    },
+    "getkword": {
+        "prefix" : "getkword",
+        "body" : "getkword ${1:[msg]}",
+        "description" : "Pauses for user input of a keyword, and returns that keyword"
+    },
+    "getorient": {
+        "prefix" : "getorient",
+        "body" : "getorient ${1:[pt]} ${2:[msg]}",
+        "description" : "Pauses for user input of an angle, and returns that angle in radians"
+    },
+    "getpoint": {
+        "prefix" : "getpoint",
+        "body" : "getpoint ${1:[pt]} ${2:[msg]}",
+        "description" : "Pauses for user input of a point, and returns that point"
+    },
+    "getpropertyvalue": {
+        "prefix" : "getpropertyvalue",
+        "body" : "getpropertyvalue ${1:ename} ${2:propertyname[or collectionName index name]}",
+        "description" : "Returns the current value of an entity¡¯s property"
+    },
+    "getreal": {
+        "prefix" : "getreal",
+        "body" : "getreal ${1:[msg]}",
+        "description" : "Pauses for user input of a real number, and returns that real number"
+    },
+    "getstring": {
+        "prefix" : "getstring",
+        "body" : "getstring ${1:[cr]} ${2:[msg]}",
+        "description" : "Pauses for user input of a string, and returns that string"
+    },
+    "getvar": {
+        "prefix" : "getvar",
+        "body" : "getvar ${1:varname}",
+        "description" : "Retrieves the value of an AutoCAD system variable"
+    },
+    "get_attr": {
+        "prefix" : "get_attr",
+        "body" : "get_attr ${1:key} ${2:attribute}",
+        "description" : "Retrieves the DCL value of a dialog box attribute"
+    },
+    "get_tile": {
+        "prefix" : "get_tile",
+        "body" : "get_tile ${1:key}",
+        "description" : "Retrieves the current runtime value of a dialog box tile"
+    },
+    "grclear": {
+        "prefix" : "grclear",
+        "body" : "grclear",
+        "description" : "Clears the current viewport (obsolete)"
+    },
+    "grdraw": {
+        "prefix" : "grdraw",
+        "body" : "grdraw ${1:from} ${2:to} ${3:color} ${4:[highlight]}",
+        "description" : "Draws a vector between two points, in the current viewport"
+    },
+    ">": {
+        "prefix" : ">",
+        "body" : "> ${1:numstr} ${2:[numstr...]}",
+        "description" : "Returns T if each argument is numerically greater than the argument to its right; otherwise returns nil"
+    },
+    "grread": {
+        "prefix" : "grread",
+        "body" : "grread ${1:[track]} ${2:[allkeys [curtype]]}",
+        "description" : "Reads values from any of the AutoCAD input devices"
+    },
+    "grtext": {
+        "prefix" : "grtext",
+        "body" : "grtext ${1:[box text [highlight]]}",
+        "description" : "Writes text to the status line or to screen menu areas"
+    },
+    "grvecs": {
+        "prefix" : "grvecs",
+        "body" : "grvecs ${1:vlist} ${2:[trans]}",
+        "description" : "Draws multiple vectors in the drawing area"
+    },
+    "handent": {
+        "prefix" : "handent",
+        "body" : "handent ${1:handle}",
+        "description" : "Returns an object (entity) name based on its handle"
+    },
+    "if": {
+        "prefix" : "if",
+        "body" : "if ${1:testexpr} ${2:thenexpr} ${3:[elseexpr]}",
+        "description" : "Conditionally evaluates expressions"
+    },
+    "1+": {
+        "prefix" : "1+",
+        "body" : "1+ ${1:number}",
+        "description" : "Increments a number by 1"
+    },
+    "initcommandversion": {
+        "prefix" : "initcommandversion",
+        "body" : "initcommandversion ${1:[version]}",
+        "description" : "Forces the next command to run with the specified version"
+    },
+    "initcommandversion": {
+        "prefix" : "initcommandversion",
+        "body" : "initcommandversion ${1:[version]}",
+        "description" : "Forces the next command to run with the specified version"
+    },
+    "initdia": {
+        "prefix" : "initdia",
+        "body" : "initdia ${1:[dialogflag]}",
+        "description" : "Forces the display of the next command's dialog box"
+    },
+    "initget": {
+        "prefix" : "initget",
+        "body" : "initget ${1:[bits]} ${2:[keywords]}",
+        "description" : "Establishes keywords for use by the next user-input function call"
+    },
+    "inters": {
+        "prefix" : "inters",
+        "body" : "inters ${1:pt1} ${2:pt2} ${3:pt3} ${4:pt4} ${5:[onseg]}",
+        "description" : "Finds the intersection of two lines"
+    },
+    "ispropertyreadonly": {
+        "prefix" : "ispropertyreadonly",
+        "body" : "ispropertyreadonly ${1:ename} ${2:propertyname [or collectionName index name]}",
+        "description" : "Returns the read-only state of an entity¡¯s property"
+    },
+    "itoa": {
+        "prefix" : "itoa",
+        "body" : "itoa ${1:int}",
+        "description" : "Returns the conversion of an integer into a string"
+    },
+    "lambda": {
+        "prefix" : "lambda",
+        "body" : "lambda ${1:arguments} ${2:expr...}",
+        "description" : "Defines an anonymous function"
+    },
+    "last": {
+        "prefix" : "last",
+        "body" : "last ${1:lst}",
+        "description" : "Returns the last element in a list"
+    },
+    "layerstate-addlayers": {
+        "prefix" : "layerstate-addlayers",
+        "body" : "layerstate-addlayers ${1:layerstatename} (list ${2:layerstate} ${3:layername} ${4:state} ${5:color} ${6:linetype} ${7:lineweight} ${8:plotstyle})",
+        "description" : "Adds or updates a series of layers to a layer state"
+    },
+    "layerstate-compare": {
+        "prefix" : "layerstate-compare",
+        "body" : "layerstate-compare ${1:layerstatename} ${2:viewport}",
+        "description" : "Compares a layer state to the layers in the current drawing"
+    },
+    "layerstate-delete": {
+        "prefix" : "layerstate-delete",
+        "body" : "layerstate-delete ${1:layerstatename}",
+        "description" : "Deletes a layer state"
+    },
+    "layerstate-export": {
+        "prefix" : "layerstate-export",
+        "body" : "layerstate-export ${1:layerstatename} ${2:filename}",
+        "description" : "Exports a layer state to a specified file"
+    },
+    "layerstate-getlastrestored": {
+        "prefix" : "layerstate-getlastrestored",
+        "body" : "layerstate-getlastrestored",
+        "description" : "Returns the name of the last restored layer state in the current drawing"
+    },
+    "layerstate-getlayers": {
+        "prefix" : "layerstate-getlayers",
+        "body" : "layerstate-getlayers ${1:layerstatename} ${2:[invert]}",
+        "description" : "Returns the layers saved in a layer state"
+    },
+    "layerstate-getnames": {
+        "prefix" : "layerstate-getnames",
+        "body" : "layerstate-getnames ${1:[includehidden]} ${2:[includexref]}",
+        "description" : "Returns a list of the layer state names"
+    },
+    "layerstate-has": {
+        "prefix" : "layerstate-has",
+        "body" : "layerstate-has ${1:layerstatename}",
+        "description" : "Checks if a layer state is present"
+    },
+    "layerstate-import": {
+        "prefix" : "layerstate-import",
+        "body" : "layerstate-import ${1:filename}",
+        "description" : "Imports a layer state from a specified file"
+    },
+    "layerstate-importfromdb": {
+        "prefix" : "layerstate-importfromdb",
+        "body" : "layerstate-importfromdb ${1:layerstatename} ${2:filename}",
+        "description" : "Imports a layer state from a specified drawing file"
+    },
+    "layerstate-removelayers": {
+        "prefix" : "layerstate-removelayers",
+        "body" : "layerstate-removelayers ${1:layerstatename} (list ${2:layernames...})",
+        "description" : "Removes a list of layers from a layer state"
+    },
+    "layerstate-rename": {
+        "prefix" : "layerstate-rename",
+        "body" : "layerstate-rename ${1:oldlayerstatename} ${2:newlayerstatename}",
+        "description" : "Renames a layer state"
+    },
+    "layerstate-restore": {
+        "prefix" : "layerstate-restore",
+        "body" : "layerstate-restore ${1:layerstatename} ${2:viewport} ${3:[restoreflags]}",
+        "description" : "Restores a layer state into the current drawing"
+    },
+    "layerstate-save": {
+        "prefix" : "layerstate-save",
+        "body" : "layerstate-save ${1:layerstatename} ${2:mask} ${3:viewport}",
+        "description" : "Saves a layer state in the current drawing"
+    },
+    "layoutlist": {
+        "prefix" : "layoutlist",
+        "body" : "layoutlist",
+        "description" : "Returns a list of all paper space layouts in the current drawing"
+    },
+    "length": {
+        "prefix" : "length",
+        "body" : "length ${1:lst}",
+        "description" : "Returns an integer indicating the number of elements in a list"
+    },
+    "<": {
+        "prefix" : "<",
+        "body" : "< ${1:numstr} ${2:[numstr...]}",
+        "description" : "Returns T if each argument is numerically less than the argument to its right; otherwise nil"
+    },
+    "listp": {
+        "prefix" : "listp",
+        "body" : "listp ${1:item}",
+        "description" : "Verifies that an item is a list"
+    },
+    "load_dialog": {
+        "prefix" : "load_dialog",
+        "body" : "load_dialog ${1:dclfile}",
+        "description" : "Loads a DCL file"
+    },
+    "log": {
+        "prefix" : "log",
+        "body" : "log ${1:num}",
+        "description" : "Returns the natural log of a number as a real number"
+    },
+    "logand": {
+        "prefix" : "logand",
+        "body" : "logand ${1:[ints...]}",
+        "description" : "Returns the result of the logical bitwise AND of a list of integers"
+    },
+    "logior": {
+        "prefix" : "logior",
+        "body" : "logior ${1:[ints...]}",
+        "description" : "Returns the result of the logical bitwise inclusive OR of a list of integers"
+    },
+    "lsh": {
+        "prefix" : "lsh",
+        "body" : "lsh ${1:int} ${2:numbits}",
+        "description" : "Returns the logical bitwise shift of an integer by a specified number of bits"
+    },
+    "mapcar": {
+        "prefix" : "mapcar",
+        "body" : "mapcar ${1:function} ${2:lists...}",
+        "description" : "Returns a list that is the result of executing a function with a list (or lists) supplied as arguments to the function"
+    },
+    "max": {
+        "prefix" : "max",
+        "body" : "max ${1:[numbers...]}",
+        "description" : "Returns the largest of the numbers given"
+    },
+    "mem": {
+        "prefix" : "mem",
+        "body" : "mem",
+        "description" : "Displays the current state of the AutoLISP memory"
+    },
+    "member": {
+        "prefix" : "member",
+        "body" : "member ${1:expr} ${2:lst}",
+        "description" : "Searches a list for an occurrence of an expression and returns the remainder of the list, starting with the first occurrence of the expression"
+    },
+    "menucmd": {
+        "prefix" : "menucmd",
+        "body" : "menucmd ${1:str}",
+        "description" : "Issues menu commands, or sets and retrieves menu item status"
+    },
+    "menugroup": {
+        "prefix" : "menugroup",
+        "body" : "menugroup ${1:groupname}",
+        "description" : "Verifies that a menugroup is loaded"
+    },
+    "min": {
+        "prefix" : "min",
+        "body" : "min ${1:[numbers...]}",
+        "description" : "Returns the smallest of the numbers given"
+    },
+    "minusp": {
+        "prefix" : "minusp",
+        "body" : "minusp ${1:num}",
+        "description" : "Verifies that a number is negative"
+    },
+    "mode_tile": {
+        "prefix" : "mode_tile",
+        "body" : "mode_tile ${1:key} ${2:mode}",
+        "description" : "Sets the mode of a dialog box tile"
+    },
+    "*": {
+        "prefix" : "*",
+        "body" : "* ${1:[numbers...]}",
+        "description" : "Returns the product of all numbers"
+    },
+    "namedobjdict": {
+        "prefix" : "namedobjdict",
+        "body" : "namedobjdict",
+        "description" : "Returns the entity name of the current drawing's named object dictionary, which is the root of all nongraphical objects in the drawing"
+    },
+    "nentsel": {
+        "prefix" : "nentsel",
+        "body" : "nentsel ${1:[msg]}",
+        "description" : "Prompts the user to select an object (entity) by specifying a point, and provides access to the definition data contained within a complex object"
+    },
+    "nentselp": {
+        "prefix" : "nentselp",
+        "body" : "nentselp ${1:[msg]} ${2:[pt]}",
+        "description" : "Provides similar functionality to that of the nentsel function without the need for user input"
+    },
+    "new_dialog": {
+        "prefix" : "new_dialog",
+        "body" : "new_dialog ${1:dlgname} ${2:dcl_id} ${3:[action [screen-pt]]}",
+        "description" : "Begins a new dialog box and displays it, and can also specify a default action"
+    },
+    "not": {
+        "prefix" : "not",
+        "body" : "not ${1:item}",
+        "description" : "Verifies that an item evaluates to nil"
+    },
+    "nth": {
+        "prefix" : "nth",
+        "body" : "nth ${1:n} ${2:lst}",
+        "description" : "Returns the nth element of a list"
+    },
+    "null": {
+        "prefix" : "null",
+        "body" : "null ${1:item}",
+        "description" : "Verifies that an item is bound to nil"
+    },
+    "numberp": {
+        "prefix" : "numberp",
+        "body" : "numberp ${1:item}",
+        "description" : "Verifies that an item is a real number or an integer"
+    },
+    "or": {
+        "prefix" : "or",
+        "body" : "or ${1:[expr...]}",
+        "description" : "Returns the logical OR of a list of expressions"
+    },
+    "polar": {
+        "prefix" : "polar",
+        "body" : "polar ${1:pt} ${2:ang} ${3:dist}",
+        "description" : "Returns the UCS 3D point at a specified angle and distance from a point"
+    },
+    "*pop-error-mode*": {
+        "prefix" : "*pop-error-mode*",
+        "body" : "*pop-error-mode*",
+        "description" : "Error-handling function that ends the previous call to *push-error-using-command* or *push-error-using-stack*"
+    },
+    "prin1": {
+        "prefix" : "prin1",
+        "body" : "prin1 ${1:[expr [file-desc]]}",
+        "description" : "Prints an expression to the command line or writes an expression to an open file"
+    },
+    "princ": {
+        "prefix" : "princ",
+        "body" : "princ ${1:[expr [file-desc]]}",
+        "description" : "Prints an expression to the command line, or writes an expression to an open file"
+    },
+    "print": {
+        "prefix" : "print",
+        "body" : "print ${1:[expr [file-desc]]}",
+        "description" : "Prints an expression to the command line, or writes an expression to an open file"
+    },
+    "progn": {
+        "prefix" : "progn",
+        "body" : "progn ${1:[expr...]}",
+        "description" : "Evaluates each expression sequentially and returns the value of the last expression"
+    },
+    "prompt": {
+        "prefix" : "prompt",
+        "body" : "prompt ${1:msg}",
+        "description" : "Displays a string on your screen's prompt area"
+    },
+    "*push-error-using-command*": {
+        "prefix" : "*push-error-using-command*",
+        "body" : "*push-error-using-command*",
+        "description" : "Error-handling function that indicates the use of the command function within a custom *error* handler"
+    },
+    "*push-error-using-stack*": {
+        "prefix" : "*push-error-using-stack*",
+        "body" : "*push-error-using-stack*",
+        "description" : "Error-handling function that indicates the use of variables from the AutoLISP stack within a custom *error* handler"
+    },
+    "quote": {
+        "prefix" : "quote",
+        "body" : "quote ${1:expr}",
+        "description" : "Returns an expression without evaluating it"
+    },
+    "read-char": {
+        "prefix" : "read-char",
+        "body" : "read-char ${1:[file-desc]}",
+        "description" : "Returns the decimal ASCII code representing the character read from the keyboard input buffer or from an open file"
+    },
+    "read-line": {
+        "prefix" : "read-line",
+        "body" : "read-line ${1:[file-desc]}",
+        "description" : "Reads a string from the keyboard or from an open file, until an end-of-line marker is encountered"
+    },
+    "read": {
+        "prefix" : "read",
+        "body" : "read ${1:[string]}",
+        "description" : "Returns the first list or atom obtained from a string"
+    },
+    "regapp": {
+        "prefix" : "regapp",
+        "body" : "regapp ${1:application}",
+        "description" : "Registers an application name with the current AutoCAD drawing in preparation for using extended object data"
+    },
+    "rem": {
+        "prefix" : "rem",
+        "body" : "rem ${1:[numbers...]}",
+        "description" : "Divides the first number by the second, and returns the remainder"
+    },
+    "repeat": {
+        "prefix" : "repeat",
+        "body" : "repeat ${1:int} ${2:[expr...]}",
+        "description" : "Evaluates each expression a specified number of times, and returns the value of the last expression"
+    },
+    "rtos": {
+        "prefix" : "rtos",
+        "body" : "rtos ${1:number} ${2:[mode [precision]]}",
+        "description" : "Converts a number into a string"
+    },
+    "set": {
+        "prefix" : "set",
+        "body" : "set ${1:sym} ${2:expr}",
+        "description" : "Sets the value of a quoted symbol name to an expression"
+    },
+    "setcfg": {
+        "prefix" : "setcfg",
+        "body" : "setcfg ${1:cfgname} ${2:cfgval}",
+        "description" : "Obsolete. Writes application data to the AppData section of the acad20xx.cfg file"
+    },
+    "setenv": {
+        "prefix" : "setenv",
+        "body" : "setenv ${1:varname} ${2:value}",
+        "description" : "Sets a system environment variable to a specified value"
+    },
+    "setfunhelp": {
+        "prefix" : "setfunhelp",
+        "body" : "setfunhelp ${1:c:fname} ${2:[helpfile [topic [command]]]}",
+        "description" : "Registers a user-defined command with the Help facility so the appropriate Help file and topic are called when the user requests help on that command"
+    },
+    "setpropertyvalue": {
+        "prefix" : "setpropertyvalue",
+        "body" : "setpropertyvalue ${1:ename} ${2:propertyname} ${3:value} ${4:[or collectionName index name val]}",
+        "description" : "Sets the property value for an entity"
+    },
+    "setq": {
+        "prefix" : "setq",
+        "body" : "setq ${1:sym} ${2:expr} ${3:[sym expr...]}",
+        "description" : "Sets the value of a symbol or symbols to associated expressions"
+    },
+    "setview": {
+        "prefix" : "setview",
+        "body" : "setview ${1:view_descriptor} ${2:[vport_id]}",
+        "description" : "Establishes a view for a specified viewport"
+    },
+    "set_tile": {
+        "prefix" : "set_tile",
+        "body" : "set_tile ${1:key} ${2:value}",
+        "description" : "Sets the value of a dialog box tile"
+    },
+    "showhtmlmodalwindow": {
+        "prefix" : "showhtmlmodalwindow",
+        "body" : "showhtmlmodalwindow ${1:uri}",
+        "description" : "Displays a modal dialog box with a specified URI (Uniform Resource Identifier)"
+    },
+    "sin": {
+        "prefix" : "sin",
+        "body" : "sin ${1:ang}",
+        "description" : "Returns the sine of an angle as a real number expressed in radians"
+    },
+    "slide_image": {
+        "prefix" : "slide_image",
+        "body" : "slide_image ${1:x1} ${2:y1} ${3:width} ${4:height} ${5:sldname}",
+        "description" : "Displays an AutoCAD slide in the currently active dialog box image tile"
+    },
+    "snvalid": {
+        "prefix" : "snvalid",
+        "body" : "snvalid ${1:sym_name} ${2:[flag]}",
+        "description" : "Checks the symbol table name for valid characters"
+    },
+    "sqrt": {
+        "prefix" : "sqrt",
+        "body" : "sqrt ${1:num}",
+        "description" : "Returns the square root of a number as a real number"
+    },
+    "ssadd": {
+        "prefix" : "ssadd",
+        "body" : "ssadd ${1:[ename [ss]]}",
+        "description" : "Adds an object (entity) to a selection set, or creates a new selection set"
+    },
+    "ssdel": {
+        "prefix" : "ssdel",
+        "body" : "ssdel ${1:ename} ${2:ss}",
+        "description" : "Deletes an object (entity) from a selection set"
+    },
+    "ssget": {
+        "prefix" : "ssget",
+        "body" : "ssget ${1:[sel-method]} ${2:[pt1 [pt2]]} ${4:[pt-list]} ${5:[filter-list]}",
+        "description" : "Creates a selection set from the selected object"
+    },
+    "ssgetfirst": {
+        "prefix" : "ssgetfirst",
+        "body" : "ssgetfirst",
+        "description" : "Determines which objects are selected and gripped"
+    },
+    "sslength": {
+        "prefix" : "sslength",
+        "body" : "sslength ${1:ss}",
+        "description" : "Returns an integer containing the number of objects (entities) in a selection set"
+    },
+    "ssmemb": {
+        "prefix" : "ssmemb",
+        "body" : "ssmemb ${1:ename} ${2:ss}",
+        "description" : "Tests whether an object (entity) is a member of a selection set"
+    },
+    "ssname": {
+        "prefix" : "ssname",
+        "body" : "ssname ${1:ss} ${2:index}",
+        "description" : "Returns the object (entity) name of the indexed element of a selection set"
+    },
+    "ssnamex": {
+        "prefix" : "ssnamex",
+        "body" : "ssnamex ${1:ss} ${2:[index]}",
+        "description" : "Retrieves information about how a selection set was created."
+    },
+    "sssetfirst": {
+        "prefix" : "sssetfirst",
+        "body" : "sssetfirst ${1:gripset} ${2:[pickset]}",
+        "description" : "Sets which objects are selected and gripped"
+    },
+    "startapp": {
+        "prefix" : "startapp",
+        "body" : "startapp ${1:appcmd} ${2:[file]}",
+        "description" : "Starts an external application"
+    },
+    "start_dialog": {
+        "prefix" : "start_dialog",
+        "body" : "start_dialog",
+        "description" : "Displays a dialog box and begins accepting user input"
+    },
+    "start_image": {
+        "prefix" : "start_image",
+        "body" : "start_image ${1:key}",
+        "description" : "Starts the creation of an image in the dialog box tile"
+    },
+    "start_list": {
+        "prefix" : "start_list",
+        "body" : "start_list ${1:key} ${2:[operation [index]]}",
+        "description" : "Starts the processing of a list in the list box or in the pop-up list dialog box tile"
+    },
+    "strcase": {
+        "prefix" : "strcase",
+        "body" : "strcase ${1:string} ${2:[which]}",
+        "description" : "Returns a string where all alphabetic characters have been converted to uppercase or lowercase"
+    },
+    "strcat": {
+        "prefix" : "strcat",
+        "body" : "strcat ${1:[strings...]}",
+        "description" : "Returns a string that is the concatenation of multiple strings"
+    },
+    "strlen": {
+        "prefix" : "strlen",
+        "body" : "strlen ${1:[str} ${2:...]}",
+        "description" : "Returns an integer that is the number of characters in a string"
+    },
+    "subst": {
+        "prefix" : "subst",
+        "body" : "subst ${1:newitem} ${2:olditem} ${3:lst}",
+        "description" : "Searches a list for an old item and returns a copy of the list with a new item substituted in place of every occurrence of the old item"
+    },
+    "substr": {
+        "prefix" : "substr",
+        "body" : "substr ${1:str} ${2:start} ${3:[length]}",
+        "description" : "Returns a substring of a string"
+    },
+    "tblnext": {
+        "prefix" : "tblnext",
+        "body" : "tblnext ${1:table-name} ${2:[rewind]}",
+        "description" : "Finds the next item in a symbol table"
+    },
+    "tblobjname": {
+        "prefix" : "tblobjname",
+        "body" : "tblobjname ${1:table-name} ${2:symbol}",
+        "description" : "Returns the entity name of a specified symbol table entry"
+    },
+    "tblsearch": {
+        "prefix" : "tblsearch",
+        "body" : "tblsearch ${1:table-name} ${2:symbol} ${3:[setnext]}",
+        "description" : "Searches a symbol table for a symbol name"
+    },
+    "term_dialog": {
+        "prefix" : "term_dialog",
+        "body" : "term_dialog",
+        "description" : "Terminates all current dialog boxes as if the user had canceled each of them"
+    },
+    "terpri": {
+        "prefix" : "terpri",
+        "body" : "terpri",
+        "description" : "Prints a newline to the command line"
+    },
+    "textbox": {
+        "prefix" : "textbox",
+        "body" : "textbox ${1:elist}",
+        "description" : "Measures a specified text object, and returns the diagonal coordinates of a box that encloses the text"
+    },
+    "textpage": {
+        "prefix" : "textpage",
+        "body" : "textpage",
+        "description" : "Switches focus from the drawing area to the text screen"
+    },
+    "trace": {
+        "prefix" : "trace",
+        "body" : "trace ${1:[functions...]}",
+        "description" : "Aids in AutoLISP debugging"
+    },
+    "trans": {
+        "prefix" : "trans",
+        "body" : "trans ${1:pt} ${2:from} ${3:to} ${4:[disp]}",
+        "description" : "Translates a point (or a displacement) from one coordinate system to another"
+    },
+    "type": {
+        "prefix" : "type",
+        "body" : "type ${1:item}",
+        "description" : "Returns the type of a specified item"
+    },
+    "unload_dialog": {
+        "prefix" : "unload_dialog",
+        "body" : "unload_dialog ${1:dcl_id}",
+        "description" : "Unloads a DCL file"
+    },
+    "untrace": {
+        "prefix" : "untrace",
+        "body" : "untrace ${1:[functions...]}",
+        "description" : "Clears the trace flag for the specified functions"
+    },
+    "vector_image": {
+        "prefix" : "vector_image",
+        "body" : "vector_image ${1:x1} ${2:y1} ${3:x2} ${4:y2} ${5:color}",
+        "description" : "Draws a vector in the currently active dialog box image"
+    },
+    "ver": {
+        "prefix" : "ver",
+        "body" : "ver",
+        "description" : "Returns a string that contains the current AutoLISP version number"
+    },
     "vl-acad-defun": {
-        "prefix"     : "vl-acad-defun",
-        "body"       : "vl-acad-defun '${1:symbol}",
-        "description": "Defines an AutoLISP function symbol as an external subroutine"
+        "prefix" : "vl-acad-defun",
+        "body" : "vl-acad-defun '${1:symbol}",
+        "description" : "Defines an AutoLISP function symbol as an external subroutine"
     },
     "vl-acad-undefun": {
-        "prefix"     : "vl-acad-undefun",
-        "body"       : "vl-acad-undefun '${1:symbol}",
-        "description": "Undefines an AutoLISP function symbol so it is no longer available to ObjectARX applications"
+        "prefix" : "vl-acad-undefun",
+        "body" : "vl-acad-undefun '${1:symbol}",
+        "description" : "Undefines an AutoLISP function symbol so it is no longer available to ObjectARX applications"
     },
     "vl-arx-import": {
-        "prefix"     : "vl-arx-import",
-        "body"       : "vl-arx-import $function",
-        "description": "Imports ObjectARX/ADSRX functions into a separate-namespace VLX"
+        "prefix" : "vl-arx-import",
+        "body" : "vl-arx-import ${1:[function-or-application]}",
+        "description" : "Imports ObjectARX/ADSRX functions into a separate-namespace VLX"
     },
     "vl-bb-ref": {
-        "prefix"     : "vl-bb-ref",
-        "body"       : "vl-bb-ref '${1:variable}",
-        "description": "Returns the value of a variable from the blackboard namespace"
+        "prefix" : "vl-bb-ref",
+        "body" : "vl-bb-ref '${1:variable}",
+        "description" : "Returns the value of a variable from the blackboard namespace"
     },
     "vl-bb-set": {
-        "prefix"     : "vl-bb-set",
-        "body"       : "vl-bb-set '${1:symbol} ${2:value}",
-        "description": "Sets a variable in the blackboard namespace"
+        "prefix" : "vl-bb-set",
+        "body" : "vl-bb-set '${1:symbol} ${2:value}",
+        "description" : "Sets a variable in the blackboard namespace"
     },
     "vl-catch-all-apply": {
-        "prefix"     : "vl-catch-all-apply",
-        "body"       : "vl-catch-all-apply '${1:function} ${2:list}",
-        "description": "Passes a list of arguments to a specified function and traps any exceptions"
+        "prefix" : "vl-catch-all-apply",
+        "body" : "vl-catch-all-apply '${1:function} ${2:list}",
+        "description" : "Passes a list of arguments to a specified function and traps any exceptions"
     },
     "vl-catch-all-error-message": {
-        "prefix"     : "vl-catch-all-error-message",
-        "body"       : "vl-catch-all-error-message ${1:error-obj}",
-        "description": "Returns a string from an error object"
+        "prefix" : "vl-catch-all-error-message",
+        "body" : "vl-catch-all-error-message ${1:error-obj}",
+        "description" : "Returns a string from an error object"
     },
     "vl-catch-all-error-p": {
-        "prefix"     : "vl-catch-all-error-p",
-        "body"       : "vl-catch-all-error-p $arg",
-        "description": "Determines whether an argument is an error object returned from vl-catch-all-apply"
+        "prefix" : "vl-catch-all-error-p",
+        "body" : "vl-catch-all-error-p ${1:arg}",
+        "description" : "Determines whether an argument is an error object returned from vl-catch-all-apply"
     },
     "vl-cmdf": {
-        "prefix"     : "vl-cmdf",
-        "body"       : "vl-cmdf ${1:args...}",
-        "description": "Executes an AutoCAD command"
+        "prefix" : "vl-cmdf",
+        "body" : "vl-cmdf ${1:[arguments...]}",
+        "description" : "Executes an AutoCAD command"
     },
     "vl-consp": {
-        "prefix"     : "vl-consp",
-        "body"       : "vl-consp ${1:list-variable}",
-        "description": "Determines whether or not a list is nil"
+        "prefix" : "vl-consp",
+        "body" : "vl-consp ${1:list-variable}",
+        "description" : "Determines whether or not a list is nil"
     },
     "vl-directory-files": {
-        "prefix"     : "vl-directory-files",
-        "body"       : "vl-directory-files ${1:directory} ${2:pattern} ${3|-1,0,1|}",
-        "description": "Lists all files in a given directory"
+        "prefix" : "vl-directory-files",
+        "body" : "vl-directory-files ${1:[directory pattern directories]}",
+        "description" : "Lists all files in a given directory"
     },
     "vl-doc-export": {
-        "prefix"     : "vl-doc-export",
-        "body"       : "vl-doc-export '$function",
-        "description": "Makes a function available to the current document"
+        "prefix" : "vl-doc-export",
+        "body" : "vl-doc-export '${1:function}",
+        "description" : "Makes a function available to the current document"
     },
     "vl-doc-import": {
-        "prefix"     : "vl-doc-import",
-        "body"       : "vl-doc-import ${1:application} '${2:function}",
-        "description": "Imports a previously exported function into a VLX namespace"
+        "prefix" : "vl-doc-import",
+        "body" : "vl-doc-import ${1:application} ${2:['functions...]}",
+        "description" : "Imports a previously exported function into a VLX namespace"
     },
     "vl-doc-ref": {
-        "prefix"     : "vl-doc-ref",
-        "body"       : "vl-doc-ref '${1:symbol}",
-        "description": "Retrieves the value of a variable from the current document's namespace"
+        "prefix" : "vl-doc-ref",
+        "body" : "vl-doc-ref '${1:symbol}",
+        "description" : "Retrieves the value of a variable from the current document's namespace"
     },
     "vl-doc-set": {
-        "prefix"     : "vl-doc-set",
-        "body"       : "vl-doc-set '${1:symbol} ${2:value}",
-        "description": "Sets the value of a variable in the current document's namespace"
+        "prefix" : "vl-doc-set",
+        "body" : "vl-doc-set '${1:symbol} ${2:value}",
+        "description" : "Sets the value of a variable in the current document's namespace"
     },
     "vl-every": {
-        "prefix"     : "vl-every",
-        "body"       : "vl-every ${1:predicate-function} ${2:lists}",
-        "description": "Checks whether the predicate is true for every element combination"
+        "prefix" : "vl-every",
+        "body" : "vl-every ${1:predicate-function} ${2:list} ${3:[lists...]}",
+        "description" : "Checks whether the predicate is true for every element combination"
     },
     "vl-exit-with-error": {
-        "prefix"     : "vl-exit-with-error",
-        "body"       : "vl-exit-with-error $msg",
-        "description": "Passes control from an error handler to the *error* function of the calling namespace"
+        "prefix" : "vl-exit-with-error",
+        "body" : "vl-exit-with-error ${1:msg}",
+        "description" : "Passes control from an error handler to the *error* function of the calling namespace"
     },
     "vl-exit-with-value": {
-        "prefix"     : "vl-exit-with-value",
-        "body"       : "vl-exit-with-value $value",
-        "description": "Returns a value to the function that invoked the *error* handler from another namespace"
+        "prefix" : "vl-exit-with-value",
+        "body" : "vl-exit-with-value ${1:value}",
+        "description" : "Returns a value to the function that invoked the *error* handler from another namespace"
     },
     "vl-file-copy": {
-        "prefix"     : "vl-file-copy",
-        "body"       : "vl-file-copy ${1:source-file} ${2:destination-file} ${3|t,nil|}",
-        "description": "Copies or appends the contents of one file to another file"
+        "prefix" : "vl-file-copy",
+        "body" : "vl-file-copy ${1:source-file} ${2:destination-file} ${3:[append]}",
+        "description" : "Copies or appends the contents of one file to another file"
     },
     "vl-file-delete": {
-        "prefix"     : "vl-file-delete",
-        "body"       : "vl-file-delete $filename",
-        "description": "Deletes a file"
+        "prefix" : "vl-file-delete",
+        "body" : "vl-file-delete ${1:filename}",
+        "description" : "Deletes a file"
     },
     "vl-file-directory-p": {
-        "prefix"     : "vl-file-directory-p",
-        "body"       : "vl-file-directory-p $filename",
-        "description": "Determines if a file name refers to a directory"
+        "prefix" : "vl-file-directory-p",
+        "body" : "vl-file-directory-p ${1:filename}",
+        "description" : "Determines if a file name refers to a directory"
     },
     "vl-file-rename": {
-        "prefix"     : "vl-file-rename",
-        "body"       : "vl-file-rename ${1:old-filename} ${2:new-filename}",
-        "description": "Renames a file"
+        "prefix" : "vl-file-rename",
+        "body" : "vl-file-rename ${1:old-filename} ${2:new-filename}",
+        "description" : "Renames a file"
     },
     "vl-file-size": {
-        "prefix"     : "vl-file-size",
-        "body"       : "vl-file-size $filename",
-        "description": "Determines the size of a file, in bytes"
+        "prefix" : "vl-file-size",
+        "body" : "vl-file-size ${1:filename}",
+        "description" : "Determines the size of a file, in bytes"
     },
     "vl-file-systime": {
-        "prefix"     : "vl-file-systime",
-        "body"       : "vl-file-systime $filename",
-        "description": "Returns last modification time of the specified file"
+        "prefix" : "vl-file-systime",
+        "body" : "vl-file-systime ${1:filename}",
+        "description" : "Returns last modification time of the specified file"
     },
     "vl-filename-base": {
-        "prefix"     : "vl-filename-base",
-        "body"       : "vl-filename-base $filename",
-        "description": "Returns the name of a file, after stripping out the directory path and extension"
+        "prefix" : "vl-filename-base",
+        "body" : "vl-filename-base ${1:filename}",
+        "description" : "Returns the name of a file, after stripping out the directory path and extension"
     },
     "vl-filename-directory": {
-        "prefix"     : "vl-filename-directory",
-        "body"       : "vl-filename-directory $filename",
-        "description": "Returns the directory path of a file, after stripping out the name and extension"
+        "prefix" : "vl-filename-directory",
+        "body" : "vl-filename-directory ${1:filename}",
+        "description" : "Returns the directory path of a file, after stripping out the name and extension"
     },
     "vl-filename-extension": {
-        "prefix"     : "vl-filename-extension",
-        "body"       : "vl-filename-extension $filename",
-        "description": "Returns the extension from a file name, after stripping out the rest of the name"
+        "prefix" : "vl-filename-extension",
+        "body" : "vl-filename-extension ${1:filename}",
+        "description" : "Returns the extension from a file name, after stripping out the rest of the name"
     },
     "vl-filename-mktemp": {
-        "prefix"     : "vl-filename-mktemp",
-        "body"       : "vl-filename-mktemp ${1:[pattern directory extension]}",
-        "description": "Calculates a unique file name to be used for a temporary file"
+        "prefix" : "vl-filename-mktemp",
+        "body" : "vl-filename-mktemp ${1:[pattern directory extension]}",
+        "description" : "Calculates a unique file name to be used for a temporary file"
     },
     "vl-get-resource": {
-        "prefix"     : "vl-get-resource",
-        "body"       : "vl-get-resource ${1:text-file}",
-        "description": "Returns the text stored in a .txt file packaged in a VLX"
-    },
-    "vl-list*": {
-        "prefix"     : "vl-list*",
-        "body"       : "vl-list* ${1:objects}",
-        "description": "Constructs and returns a list"
-    },
-    "vl-list->string": {
-        "prefix"     : "vl-list->string",
-        "body"       : "vl-list->string ${1:char-codes-list}",
-        "description": "Combines the characters associated with a list of integers into a string"
+        "prefix" : "vl-get-resource",
+        "body" : "vl-get-resource ${1:text-file}",
+        "description" : "Returns the text stored in a .txt file packaged in a VLX"
     },
     "vl-list-exported-functions": {
-        "prefix"     : "vl-list-exported-functions",
-        "body"       : "vl-list-exported-functions $appname",
-        "description": "Lists exported functions"
+        "prefix" : "vl-list-exported-functions",
+        "body" : "vl-list-exported-functions ${1:[appname]}",
+        "description" : "Lists exported functions"
     },
     "vl-list-length": {
-        "prefix"     : "vl-list-length",
-        "body"       : "vl-list-length ${1:list-or-cons}",
-        "description": "Calculates list length of a true list"
+        "prefix" : "vl-list-length",
+        "body" : "vl-list-length ${1:list-or-cons-object}",
+        "description" : "Calculates list length of a true list"
     },
     "vl-list-loaded-vlx": {
-        "prefix"     : "vl-list-loaded-vlx",
-        "body"       : "vl-list-loaded-vlx",
-        "description": "Returns a list of all separate-namespace VLX files associated with the current document"
+        "prefix" : "vl-list-loaded-vlx",
+        "body" : "vl-list-loaded-vlx",
+        "description" : "Returns a list of all separate-namespace VLX files associated with the current document"
+    },
+    "vl-list*": {
+        "prefix" : "vl-list*",
+        "body" : "vl-list* ${1:object} ${2:[objects...]}",
+        "description" : "Constructs and returns a list"
+    },
+    "vl-list->string": {
+        "prefix" : "vl-list->string",
+        "body" : "vl-list->string ${1:char-codes-list}",
+        "description" : "Combines the characters associated with a list of integers into a string"
     },
     "vl-load-all": {
-        "prefix"     : "vl-load-all",
-        "body"       : "vl-load-all $filename",
-        "description": "Loads a file into all open AutoCAD documents, and into any document subsequently opened during the current AutoCAD session"
+        "prefix" : "vl-load-all",
+        "body" : "vl-load-all ${1:filename}",
+        "description" : "Loads a file into all open AutoCAD documents, and into any document subsequently opened during the current AutoCAD session"
     },
     "vl-load-com": {
-        "prefix"     : "vl-load-com",
-        "body"       : "vl-load-com",
-        "description": "Loads the extended AutoLISP functions related to ActiveX support"
+        "prefix" : "vl-load-com",
+        "body" : "vl-load-com",
+        "description" : "Loads the extended AutoLISP functions related to ActiveX support"
     },
     "vl-load-reactors": {
-        "prefix"     : "vl-load-reactors",
-        "body"       : "vl-load-reactors",
-        "description": "Loads reactor support functions"
-    },
-    "vl-mkdir": {
-        "prefix"     : "vl-mkdir",
-        "body"       : "vl-mkdir $directoryname",
-        "description": "Creates a directory"
-    },
-    "vl-member-if": {
-        "prefix"     : "vl-member-if",
-        "body"       : "vl-member-if ${1:predicate-function} ${2:list}",
-        "description": "Determines if the predicate is true for one of the list members"
+        "prefix" : "vl-load-reactors",
+        "body" : "vl-load-reactors",
+        "description" : "Loads reactor support functions"
     },
     "vl-member-if-not": {
-        "prefix"     : "vl-member-if-not",
-        "body"       : "vl-member-if-not ${1:predicate-function} ${2:list}",
-        "description": "Determines if the predicate is nil for one of the list members"
+        "prefix" : "vl-member-if-not",
+        "body" : "vl-member-if-not ${1:predicate-function} ${2:lst}",
+        "description" : "Determines if the predicate is nil for one of the list members"
+    },
+    "vl-member-if": {
+        "prefix" : "vl-member-if",
+        "body" : "vl-member-if ${1:predicate-function} ${2:lst}",
+        "description" : "Determines if the predicate is true for one of the list members"
+    },
+    "vl-mkdir": {
+        "prefix" : "vl-mkdir",
+        "body" : "vl-mkdir ${1:directoryname}",
+        "description" : "Creates a directory"
     },
     "vl-position": {
-        "prefix"     : "vl-position",
-        "body"       : "vl-position ${1:symbol} ${2:list}",
-        "description": "Returns the index of the specified list item"
+        "prefix" : "vl-position",
+        "body" : "vl-position ${1:symbol} ${2:list}",
+        "description" : "Returns the index of the specified list item"
     },
     "vl-prin1-to-string": {
-        "prefix"     : "vl-prin1-to-string",
-        "body"       : "vl-prin1-to-string $data",
-        "description": "Returns the string representation of LISP data as if it were output by the prin1 function"
+        "prefix" : "vl-prin1-to-string",
+        "body" : "vl-prin1-to-string ${1:data}",
+        "description" : "Returns the string representation of LISP data as if it were output by the prin1 function"
     },
     "vl-princ-to-string": {
-        "prefix"     : "vl-princ-to-string",
-        "body"       : "vl-princ-to-string $data",
-        "description": "Returns the string representation of LISP data as if it were output by the princ function"
+        "prefix" : "vl-princ-to-string",
+        "body" : "vl-princ-to-string ${1:data}",
+        "description" : "Returns the string representation of LISP data as if it were output by the princ function"
     },
     "vl-propagate": {
-        "prefix"     : "vl-propagate",
-        "body"       : "vl-propagate '${1:symbol}",
-        "description": "Copies the value of a variable into all open document namespaces (and sets its value in any subsequent drawings opened during the current AutoCAD session)"
+        "prefix" : "vl-propagate",
+        "body" : "vl-propagate '${1:symbol}",
+        "description" : "Copies the value of a variable into all open document namespaces (and sets its value in any subsequent drawings opened during the current AutoCAD session)"
     },
     "vl-registry-delete": {
-        "prefix"     : "vl-registry-delete",
-        "body"       : "vl-registry-delete ${1:reg-key} ${2:[val-name]}",
-        "description": "Deletes the specified key from the Windows Registry or property list file on Mac OS"
+        "prefix" : "vl-registry-delete",
+        "body" : "vl-registry-delete ${1:reg-key} ${2:[val-name]}",
+        "description" : "Deletes the specified key from the Windows Registry or property list file on Mac OS"
     },
     "vl-registry-descendents": {
-        "prefix"     : "vl-registry-descendents",
-        "body"       : "vl-registry-descendents ${1:reg-key} ${2:[val-names]}",
-        "description": "Returns a list of subkeys or value names for the specified key of the Windows Registry or property list file on Mac OS"
+        "prefix" : "vl-registry-descendents",
+        "body" : "vl-registry-descendents ${1:reg-key} ${2:[val-names]}",
+        "description" : "Returns a list of subkeys or value names for the specified key of the Windows Registry or property list file on Mac OS"
     },
     "vl-registry-read": {
-        "prefix"     : "vl-registry-read",
-        "body"       : "vl-registry-read ${1:reg-key} ${2:[val-name]}",
-        "description": "Returns data stored by a specific key/value pair in the Windows Registry or property list file on Mac OS"
+        "prefix" : "vl-registry-read",
+        "body" : "vl-registry-read ${1:reg-key} ${2:[val-name]}",
+        "description" : "Returns data stored by a specific key/value pair in the Windows Registry or property list file on Mac OS"
     },
     "vl-registry-write": {
-        "prefix"     : "vl-registry-write",
-        "body"       : "vl-registry-write ${1:reg-key} ${2:[val-name val-data]}",
-        "description": "Creates a key in the Windows Registry or property list file on Mac OS"
-    },
-    "vl-remove": {
-        "prefix"     : "vl-remove",
-        "body"       : "vl-remove ${1:element-to-remove} ${2:list}",
-        "description": "Removes elements from a list"
-    },
-    "vl-remove-if": {
-        "prefix"     : "vl-remove-if",
-        "body"       : "vl-remove-if ${1:predicate-function} ${2:list}",
-        "description": "Returns all elements of the supplied list that fail the test function"
+        "prefix" : "vl-registry-write",
+        "body" : "vl-registry-write ${1:reg-key} ${2:[val-name val-data]}",
+        "description" : "Creates a key in the Windows Registry or property list file on Mac OS"
     },
     "vl-remove-if-not": {
-        "prefix"     : "vl-remove-if-not",
-        "body"       : "vl-remove-if-not ${1:predicate-function} ${2:list}",
-        "description": "Returns all elements of the supplied list that pass the test function"
+        "prefix" : "vl-remove-if-not",
+        "body" : "vl-remove-if-not ${1:predicate-function} ${2:lst}",
+        "description" : "Returns all elements of the supplied list that pass the test function"
+    },
+    "vl-remove-if": {
+        "prefix" : "vl-remove-if",
+        "body" : "vl-remove-if ${1:predicate-function} ${2:lst}",
+        "description" : "Returns all elements of the supplied list that fail the test function"
+    },
+    "vl-remove": {
+        "prefix" : "vl-remove",
+        "body" : "vl-remove ${1:element-to-remove} ${2:lst}",
+        "description" : "Removes elements from a list"
     },
     "vl-some": {
-        "prefix"     : "vl-some",
-        "body"       : "vl-some ${1:predicate-function} ${2:lists}",
-        "description": "Checks whether the predicate is not nil for one element combination"
-    },
-    "vl-sort": {
-        "prefix"     : "vl-sort",
-        "body"       : "vl-sort ${1:list} ${2:comparison-function}",
-        "description": "Sorts the elements in a list according to a given compare function"
+        "prefix" : "vl-some",
+        "body" : "vl-some ${1:predicate-function} ${2:lst} ${3:[lsts...]}",
+        "description" : "Checks whether the predicate is not nil for one element combination"
     },
     "vl-sort-i": {
-        "prefix"     : "vl-sort-i",
-        "body"       : "vl-sort-i ${1:list} ${2:comparison-function}",
-        "description": "Sorts the elements in a list according to a given compare function, and returns the element index numbers"
+        "prefix" : "vl-sort-i",
+        "body" : "vl-sort-i ${1:lst} ${2:comparison-function}",
+        "description" : "Sorts the elements in a list according to a given compare function, and returns the element index numbers"
     },
-    "vl-string->list": {
-        "prefix"     : "vl-string->list",
-        "body"       : "vl-string->list $str",
-        "description": "Converts a string into a list of character codes"
+    "vl-sort": {
+        "prefix" : "vl-sort",
+        "body" : "vl-sort ${1:lst} ${2:comparison-function}",
+        "description" : "Sorts the elements in a list according to a given compare function"
     },
     "vl-string-elt": {
-        "prefix"     : "vl-string-elt",
-        "body"       : "vl-string-elt ${1:str} ${2:position}",
-        "description": "Returns the ASCII representation of the character at a specified position in a string"
+        "prefix" : "vl-string-elt",
+        "body" : "vl-string-elt ${1:str} ${2:position}",
+        "description" : "Returns the ASCII representation of the character at a specified position in a string"
     },
     "vl-string-left-trim": {
-        "prefix"     : "vl-string-left-trim",
-        "body"       : "vl-string-left-trim ${1:character-set} ${2:str}",
-        "description": "Removes the specified characters from the beginning of a string"
+        "prefix" : "vl-string-left-trim",
+        "body" : "vl-string-left-trim ${1:character-set} ${2:str}",
+        "description" : "Removes the specified characters from the beginning of a string"
     },
     "vl-string-mismatch": {
-        "prefix"     : "vl-string-mismatch",
-        "body"       : "vl-string-mismatch ${1:str1} ${2:str2} ${3:[pos1 pos2 ignore-case-p]}",
-        "description": "Returns the length of the longest common prefix for two strings, starting at specified positions"
+        "prefix" : "vl-string-mismatch",
+        "body" : "vl-string-mismatch ${1:str1} ${2:str2} ${3:[pos1 pos2 ignore-case-p]}",
+        "description" : "Returns the length of the longest common prefix for two strings, starting at specified positions"
     },
     "vl-string-position": {
-        "prefix"     : "vl-string-position",
-        "body"       : "vl-string-position ${1:char-code} ${2:str} ${3:[start-pos [from-end-p]]}",
-        "description": "Looks for a character with the specified ASCII code in a string"
+        "prefix" : "vl-string-position",
+        "body" : "vl-string-position ${1:char-code} ${2:str} ${3:[start-pos [from-end-p]]}",
+        "description" : "Looks for a character with the specified ASCII code in a string"
     },
     "vl-string-right-trim": {
-        "prefix"     : "vl-string-right-trim",
-        "body"       : "vl-string-right-trim ${1:character-set} ${2:str}",
-        "description": "Removes the specified characters from the end of a string"
+        "prefix" : "vl-string-right-trim",
+        "body" : "vl-string-right-trim ${1:character-set} ${2:str}",
+        "description" : "Removes the specified characters from the end of a string"
     },
     "vl-string-search": {
-        "prefix"     : "vl-string-search",
-        "body"       : "vl-string-search ${1:pattern} ${2:str} ${3:[start-pos]}",
-        "description": "Searches for the specified pattern in a string"
+        "prefix" : "vl-string-search",
+        "body" : "vl-string-search ${1:pattern} ${2:str} ${3:[start-pos]}",
+        "description" : "Searches for the specified pattern in a string"
     },
     "vl-string-subst": {
-        "prefix"     : "vl-string-subst",
-        "body"       : "vl-string-subst ${1:new-str} ${2:pattern} ${3:str} ${4:[start-pos]}",
-        "description": "Substitutes one string for another, within a string"
+        "prefix" : "vl-string-subst",
+        "body" : "vl-string-subst ${1:new-str} ${2:pattern} ${3:str} ${4:[start-pos]}",
+        "description" : "Substitutes one string for another, within a string"
     },
     "vl-string-translate": {
-        "prefix"     : "vl-string-translate",
-        "body"       : "vl-string-translate ${1:source-set} ${2:dest-set} ${3:str}",
-        "description": "Replaces characters in a string with a specified set of characters"
+        "prefix" : "vl-string-translate",
+        "body" : "vl-string-translate ${1:source-set} ${2:dest-set} ${3:str}",
+        "description" : "Replaces characters in a string with a specified set of characters"
     },
     "vl-string-trim": {
-        "prefix"     : "vl-string-trim",
-        "body"       : "vl-string-trim ${1:char-set} ${2:str}",
-        "description": "Removes the specified characters from the beginning and end of a string"
+        "prefix" : "vl-string-trim",
+        "body" : "vl-string-trim ${1:char-set} ${2:str}",
+        "description" : "Removes the specified characters from the beginning and end of a string"
+    },
+    "vl-string->list": {
+        "prefix" : "vl-string->list",
+        "body" : "vl-string->list ${1:str}",
+        "description" : "Converts a string into a list of character codes"
     },
     "vl-symbol-name": {
-        "prefix"     : "vl-symbol-name",
-        "body"       : "vl-symbol-name '${1:symbol}",
-        "description": "Returns a string containing the name of a symbol"
+        "prefix" : "vl-symbol-name",
+        "body" : "vl-symbol-name ${1:symbol}",
+        "description" : "Returns a string containing the name of a symbol"
     },
     "vl-symbol-value": {
-        "prefix"     : "vl-symbol-value",
-        "body"       : "vl-symbol-value '${1:symbol}",
-        "description": "Returns the current value bound to a symbol"
+        "prefix" : "vl-symbol-value",
+        "body" : "vl-symbol-value ${1:symbol}",
+        "description" : "Returns the current value bound to a symbol"
     },
     "vl-symbolp": {
-        "prefix"     : "vl-symbolp",
-        "body"       : "vl-symbolp $object",
-        "description": "Identifies whether or not a specified object is a symbol"
+        "prefix" : "vl-symbolp",
+        "body" : "vl-symbolp ${1:object}",
+        "description" : "Identifies whether or not a specified object is a symbol"
     },
     "vl-unload-vlx": {
-        "prefix"     : "vl-unload-vlx",
-        "body"       : "vl-unload-vlx $appname",
-        "description": "Unload a VLX application that is loaded in its own namespace"
+        "prefix" : "vl-unload-vlx",
+        "body" : "vl-unload-vlx ${1:appname}",
+        "description" : "Unload a VLX application that is loaded in its own namespace"
     },
     "vl-vbaload": {
-        "prefix"     : "vl-vbaload",
-        "body"       : "vl-vbaload $filename",
-        "description": "Loads a VBA project"
+        "prefix" : "vl-vbaload",
+        "body" : "vl-vbaload ${1:filename}",
+        "description" : "Loads a VBA project"
     },
     "vl-vbarun": {
-        "prefix"     : "vl-vbarun",
-        "body"       : "vl-vbarun $macroname",
-        "description": "Runs a VBA macro"
+        "prefix" : "vl-vbarun",
+        "body" : "vl-vbarun ${1:macroname}",
+        "description" : "Runs a VBA macro"
     },
     "vl-vlx-loaded-p": {
-        "prefix"     : "vl-vlx-loaded-p",
-        "body"       : "vl-vlx-loaded-p $appname",
-        "description": "Determines whether a separate-namespace VLX is currently loaded"
+        "prefix" : "vl-vlx-loaded-p",
+        "body" : "vl-vlx-loaded-p ${1:appname}",
+        "description" : "Determines whether a separate-namespace VLX is currently loaded"
     },
-    // vlax functions
     "vlax-3D-point": {
-        "prefix": "vlax-3D-point",
-        "body": "vlax-3D-point ${1:list}",
-        "description": "Creates ActiveX-compatible (variant) 3D point structure"
+        "prefix" : "vlax-3D-point",
+        "body" : "vlax-3D-point ${1:lst} ${2:/ x y [z]}",
+        "description" : "Creates ActiveX-compatible (variant) 3D point structure"
     },
     "vlax-add-cmd": {
-        "prefix": "vlax-add-cmd",
-        "body": "vlax-add-cmd ${1:global-name} ${2:func-sym}",
-        "description": "Adds commands to the AutoCAD built-in command set"
+        "prefix" : "vlax-add-cmd",
+        "body" : "vlax-add-cmd ${1:global-name} ${2:func-sym} ${3:[local-name cmd-flags]}",
+        "description" : "Adds commands to the AutoCAD built-in command set"
     },
     "vlax-create-object": {
-        "prefix": "vlax-create-object",
-        "body": "vlax-create-object ${1:prog-id}",
-        "description": "Creates a new instance of an application object"
+        "prefix" : "vlax-create-object",
+        "body" : "vlax-create-object ${1:prog-id}",
+        "description" : "Creates a new instance of an application object"
     },
     "vlax-curve-getArea": {
-        "prefix": "vlax-curve-getArea",
-        "body": "vlax-curve-getArea ${1:curve-obj}",
-        "description": "Returns the area inside the curve"
+        "prefix" : "vlax-curve-getArea",
+        "body" : "vlax-curve-getArea ${1:curve-obj}",
+        "description" : "Returns the area inside the curve"
     },
     "vlax-curve-getClosestPointTo": {
-        "prefix": "vlax-curve-getClosestPointTo",
-        "body": "vlax-curve-getClosestPointTo ${1:curve-obj} ${2:givenPoint} ${3|t,nil|}",
-        "description": "Returns the point (in WCS) on a curve that is nearest to the specified point"
+        "prefix" : "vlax-curve-getClosestPointTo",
+        "body" : "vlax-curve-getClosestPointTo ${1:curve-obj} ${2:givenPnt} ${3:[extend]}",
+        "description" : "Returns the point (in WCS) on a curve that is nearest to the specified point"
     },
     "vlax-curve-getClosestPointToProjection": {
-        "prefix": "vlax-curve-getClosestPointToProjection",
-        "body": "vlax-curve-getClosestPointToProjection ${1:curve-obj} ${2:givenPoint} ${3:normal} ${4|t,nil|}",
-        "description": ""
+        "prefix" : "vlax-curve-getClosestPointToProjection",
+        "body" : "vlax-curve-getClosestPointToProjection ${1:curve-obj} ${2:givenPnt} ${3:normal} ${4:[extend]}",
+        "description" : "Returns the closest point (in WCS) on a curve after projecting the curve onto a plane"
     },
     "vlax-curve-getDistAtParam": {
-        "prefix": "vlax-curve-getDistAtParam",
-        "body": "vlax-curve-getDistAtParam",
-        "description": ""
+        "prefix" : "vlax-curve-getDistAtParam",
+        "body" : "vlax-curve-getDistAtParam ${1:curve-obj} ${2:param}",
+        "description" : "Returns the length of the curve's segment from the curve's beginning to the specified parameter"
     },
     "vlax-curve-getDistAtPoint": {
-        "prefix": "vlax-curve-getDistAtPoint",
-        "body": "vlax-curve-getDistAtPoint",
-        "description": ""
+        "prefix" : "vlax-curve-getDistAtPoint",
+        "body" : "vlax-curve-getDistAtPoint ${1:curve-obj} ${2:point}",
+        "description" : "Returns the length of the curve's segment between the curve's start point and the specified point"
     },
     "vlax-curve-getEndParam": {
-        "prefix": "vlax-curve-getEndParam",
-        "body": "vlax-curve-getEndParam",
-        "description": ""
+        "prefix" : "vlax-curve-getEndParam",
+        "body" : "vlax-curve-getEndParam ${1:curve-obj}",
+        "description" : "Returns the parameter of the endpoint of the curve"
     },
     "vlax-curve-getEndPoint": {
-        "prefix": "vlax-curve-getEndPoint",
-        "body": "vlax-curve-getEndPoint",
-        "description": ""
+        "prefix" : "vlax-curve-getEndPoint",
+        "body" : "vlax-curve-getEndPoint ${1:curve-obj}",
+        "description" : "Returns the endpoint (in WCS) of the curve"
     },
     "vlax-curve-getFirstDeriv": {
-        "prefix": "vlax-curve-getFirstDeriv",
-        "body": "vlax-curve-getFirstDeriv",
-        "description": ""
+        "prefix" : "vlax-curve-getFirstDeriv",
+        "body" : "vlax-curve-getFirstDeriv ${1:curve-obj} ${2:param}",
+        "description" : "Returns the first derivative (in WCS) of a curve at the specified location"
     },
     "vlax-curve-getParamAtDist": {
-        "prefix": "vlax-curve-getParamAtDist",
-        "body": "vlax-curve-getParamAtDist",
-        "description": ""
+        "prefix" : "vlax-curve-getParamAtDist",
+        "body" : "vlax-curve-getParamAtDist ${1:curve-obj} ${2:dist}",
+        "description" : "Returns the parameter of a curve at the specified distance from the beginning of the curve"
     },
     "vlax-curve-getParamAtPoint": {
-        "prefix": "vlax-curve-getParamAtPoint",
-        "body": "vlax-curve-getParamAtPoint",
-        "description": ""
+        "prefix" : "vlax-curve-getParamAtPoint",
+        "body" : "vlax-curve-getParamAtPoint ${1:curve-obj} ${2:point}",
+        "description" : "Returns the parameter of the curve at the point"
     },
     "vlax-curve-getPointAtDist": {
-        "prefix": "vlax-curve-getPointAtDist",
-        "body": "vlax-curve-getPointAtDist",
-        "description": ""
+        "prefix" : "vlax-curve-getPointAtDist",
+        "body" : "vlax-curve-getPointAtDist ${1:curve-obj} ${2:dist}",
+        "description" : "Returns the point (in WCS) along a curve at the distance specified by the user"
     },
     "vlax-curve-getPointAtParam": {
-        "prefix": "vlax-curve-getPointAtParam",
-        "body": "vlax-curve-getPointAtParam",
-        "description": ""
+        "prefix" : "vlax-curve-getPointAtParam",
+        "body" : "vlax-curve-getPointAtParam ${1:curve-obj} ${2:param}",
+        "description" : "Returns the point at the specified parameter value along a curve"
     },
     "vlax-curve-getSecondDeriv": {
-        "prefix": "vlax-curve-getSecondDeriv",
-        "body": "vlax-curve-getSecondDeriv",
-        "description": ""
+        "prefix" : "vlax-curve-getSecondDeriv",
+        "body" : "vlax-curve-getSecondDeriv ${1:curve-obj} ${2:param}",
+        "description" : "Returns the second derivative (in WCS) of a curve at the specified location"
     },
     "vlax-curve-getStartParam": {
-        "prefix": "vlax-curve-getStartParam",
-        "body": "vlax-curve-getStartParam",
-        "description": ""
+        "prefix" : "vlax-curve-getStartParam",
+        "body" : "vlax-curve-getStartParam ${1:curve-obj}",
+        "description" : "Returns the start parameter on the curve"
     },
     "vlax-curve-getStartPoint": {
-        "prefix": "vlax-curve-getStartPoint",
-        "body": "vlax-curve-getStartPoint",
-        "description": ""
+        "prefix" : "vlax-curve-getStartPoint",
+        "body" : "vlax-curve-getStartPoint ${1:curve-obj}",
+        "description" : "Returns the start point (in WCS) of the curve"
     },
     "vlax-curve-isClosed": {
-        "prefix": "vlax-curve-isClosed",
-        "body": "vlax-curve-isClosed",
-        "description": ""
+        "prefix" : "vlax-curve-isClosed",
+        "body" : "vlax-curve-isClosed ${1:curve-obj}",
+        "description" : "Determines if the specified curve is closed (that is, the start point is the same as the endpoint)"
     },
     "vlax-curve-isPeriodic": {
-        "prefix": "vlax-curve-isPeriodic",
-        "body": "vlax-curve-isPeriodic",
-        "description": ""
+        "prefix" : "vlax-curve-isPeriodic",
+        "body" : "vlax-curve-isPeriodic ${1:curve-obj}",
+        "description" : "Determines if the specified curve has an infinite range in both directions and there is a period value dT, such that a point on the curve at (u + dT) = point on curve (u), for any parameter u"
     },
     "vlax-curve-isPlanar": {
-        "prefix": "vlax-curve-isPlanar",
-        "body": "vlax-curve-isPlanar",
-        "description": ""
+        "prefix" : "vlax-curve-isPlanar",
+        "body" : "vlax-curve-isPlanar ${1:curve-obj}",
+        "description" : "Determines if there is a plane that contains the curve"
     },
     "vlax-dump-object": {
-        "prefix": "vlax-dump-object",
-        "body": "vlax-dump-object ${1:target_object} ${2|t,nil|}",
-        "description": "Lists an object's properties, and optionally, the methods that apply to the object"
+        "prefix" : "vlax-dump-object",
+        "body" : "vlax-dump-object ${1:obj} ${2:[flag]}",
+        "description" : "Lists an object's properties, and optionally, the methods that apply to the object"
     },
     "vlax-ename->vla-object": {
-        "prefix": "vlax-ename->vla-object",
-        "body": "vlax-ename->vla-object ${1:entname}",
-        "description": "Transforms an entity to a VLA-object"
+        "prefix" : "vlax-ename->vla-object",
+        "body" : "vlax-ename->vla-object ${1:entname}",
+        "description" : "Transforms an entity to a VLA-object"
     },
     "vlax-erased-p": {
-        "prefix": "vlax-erased-p",
-        "body": "vlax-erased-p",
-        "description": ""
+        "prefix" : "vlax-erased-p",
+        "body" : "vlax-erased-p ${1:obj}",
+        "description" : "Determines whether an object was erased"
     },
     "vlax-for": {
-        "prefix": "vlax-for",
-        "body": "vlax-for ${1:symbol} ${2:collection}\n\t${3:expression}\n",
-        "description": "Iterates through a collection of objects, evaluating each expression"
+        "prefix" : "vlax-for",
+        "body" : "vlax-for ${1:symbol} ${2:collection} ${3:[expressions...]]}",
+        "description" : "Iterates through a collection of objects, evaluating each expression"
     },
     "vlax-get-acad-object": {
-        "prefix": "vlax-get-acad-object",
-        "body": "vlax-get-acad-object",
-        "description": "Retrieves the top level AutoCAD application object for the current AutoCAD session"
+        "prefix" : "vlax-get-acad-object",
+        "body" : "vlax-get-acad-object",
+        "description" : "Retrieves the top level AutoCAD application object for the current AutoCAD session"
     },
     "vlax-get-object": {
-        "prefix": "vlax-get-object",
-        "body": "vlax-get-object ${1:prog-id}",
-        "description": "Returns a running instance of an application object"
+        "prefix" : "vlax-get-object",
+        "body" : "vlax-get-object ${1:prog-id}",
+        "description" : "Returns a running instance of an application object"
     },
     "vlax-get-or-create-object": {
-        "prefix": "vlax-get-or-create-object",
-        "body": "vlax-get-or-create-object ${1:prog-id}",
-        "description": "Returns a running instance of an application object, or creates a new instance if the application is not currently running"
+        "prefix" : "vlax-get-or-create-object",
+        "body" : "vlax-get-or-create-object ${1:prog-id}",
+        "description" : "Returns a running instance of an application object, or creates a new instance if the application is not currently running"
     },
     "vlax-get-property": {
-        "prefix": "vlax-get-property",
-        "body": "vlax-get-property ${1:object} ${2:property}",
-        "description": "Retrieves a VLA-object's property"
+        "prefix" : "vlax-get-property",
+        "body" : "vlax-get-property ${1:object} ${2:property}",
+        "description" : "Retrieves a VLA-object's property"
     },
     "vlax-import-type-library": {
-        "prefix": "vlax-import-type-library",
-        "body": "vlax-import-type-library",
-        "description": ""
+        "prefix" : "vlax-import-type-library",
+        "body" : "vlax-import-type-library ${1::tlb-filename} ${2:filename} ${3:[:methods-prefix} ${4:mprefix} ${5:} ${6::properties-prefix} ${7:pprefix} ${8::constants-prefix} ${9:cprefix]}",
+        "description" : "Imports information from a type library"
     },
     "vlax-invoke-method": {
-        "prefix": "vlax-invoke-method",
-        "body": "vlax-invoke-method ${1:obj} ${2:method} ${3:arg}",
-        "description": "Calls the specified ActiveX method"
+        "prefix" : "vlax-invoke-method",
+        "body" : "vlax-invoke-method ${1:obj} ${2:method} ${3:args...}",
+        "description" : "Calls the specified ActiveX method"
     },
     "vlax-ldata-delete": {
-        "prefix": "vlax-ldata-delete",
-        "body": "vlax-ldata-delete",
-        "description": ""
+        "prefix" : "vlax-ldata-delete",
+        "body" : "vlax-ldata-delete ${1:dict} ${2:key} ${3:[private]}",
+        "description" : "Erases LISP data from a drawing dictionary"
     },
     "vlax-ldata-get": {
-        "prefix": "vlax-ldata-get",
-        "body": "vlax-ldata-get",
-        "description": ""
+        "prefix" : "vlax-ldata-get",
+        "body" : "vlax-ldata-get ${1:dict} ${2:key} ${3:[default-data [private]]}",
+        "description" : "Retrieves LISP data from a drawing dictionary or an object"
     },
     "vlax-ldata-list": {
-        "prefix": "vlax-ldata-list",
-        "body": "vlax-ldata-list",
-        "description": ""
+        "prefix" : "vlax-ldata-list",
+        "body" : "vlax-ldata-list ${1:dict} ${2:[private]}",
+        "description" : "Lists AutoLISP data in a drawing dictionary"
     },
     "vlax-ldata-put": {
-        "prefix": "vlax-ldata-put",
-        "body": "vlax-ldata-put",
-        "description": ""
+        "prefix" : "vlax-ldata-put",
+        "body" : "vlax-ldata-put ${1:dict} ${2:key} ${3:data} ${4:[private]}",
+        "description" : "Stores LISP data in a drawing dictionary or an object"
     },
     "vlax-ldata-test": {
-        "prefix": "vlax-ldata-test",
-        "body": "vlax-ldata-test",
-        "description": ""
+        "prefix" : "vlax-ldata-test",
+        "body" : "vlax-ldata-test ${1:data}",
+        "description" : "Determines if data can be saved over a session boundary"
     },
     "vlax-machine-product-key": {
-        "prefix": "vlax-machine-product-key",
-        "body": "vlax-machine-product-key",
-        "description": ""
+        "prefix" : "vlax-machine-product-key",
+        "body" : "vlax-machine-product-key",
+        "description" : "Returns the AutoCAD Windows registry path in the HKLM (HKEY_LOCAL_MACHINE)"
     },
     "vlax-make-safearray": {
-        "prefix": "vlax-make-safearray",
-        "body": "vlax-make-safearray",
-        "description": ""
-    },
+        "prefix" : "vlax-make-safearray",
+        "body" : "vlax-make-safearray ${1:type} ${2:'(l-bound} ${3:.} ${4:u-bound)} ${5:['(l-bound} ${3:.} ${4:u-bound)} ${8:...)}",
+            "description" : "Creates a safearray"
+        },
     "vlax-make-variant": {
-        "prefix": "vlax-make-variant",
-        "body": "vlax-make-variant",
-        "description": ""
+        "prefix" : "vlax-make-variant",
+        "body" : "vlax-make-variant ${1:[value [type]]}",
+        "description" : "Creates a variant data type"
     },
     "vlax-map-collection": {
-        "prefix": "vlax-map-collection",
-        "body": "vlax-map-collection",
-        "description": ""
+        "prefix" : "vlax-map-collection",
+        "body" : "vlax-map-collection ${1:obj} ${2:function}",
+        "description" : "Applies a function to all objects in a collection"
     },
     "vlax-method-applicable-p": {
-        "prefix": "vlax-method-applicable-p",
-        "body": "vlax-method-applicable-p",
-        "description": ""
+        "prefix" : "vlax-method-applicable-p",
+        "body" : "vlax-method-applicable-p ${1:obj} ${2:method}",
+        "description" : "Determines if an object supports a particular method"
     },
     "vlax-object-released-p": {
-        "prefix": "vlax-object-released-p",
-        "body": "vlax-object-released-p",
-        "description": ""
+        "prefix" : "vlax-object-released-p",
+        "body" : "vlax-object-released-p ${1:obj}",
+        "description" : "Determines if an object has been released"
     },
     "vlax-product-key": {
-        "prefix": "vlax-product-key",
-        "body": "vlax-product-key",
-        "description": ""
+        "prefix" : "vlax-product-key",
+        "body" : "vlax-product-key",
+        "description" : "Returns the AutoCAD Windows registry path"
     },
     "vlax-property-available-p": {
-        "prefix": "vlax-property-available-p",
-        "body": "vlax-property-available-p",
-        "description": ""
+        "prefix" : "vlax-property-available-p",
+        "body" : "vlax-property-available-p ${1:obj} ${2:prop} ${3:[check-modify]}",
+        "description" : "Determines if an object has a specified property"
     },
     "vlax-put-property": {
-        "prefix": "vlax-put-property",
-        "body"  : "vlax-put-property ${1:obj} ${2:property} ${3:arg}",
-        "description": "Sets the property of an ActiveX object"
+        "prefix" : "vlax-put-property",
+        "body" : "vlax-put-property ${1:obj} ${2:property} ${3:arg}",
+        "description" : "Sets the property of an ActiveX object"
     },
     "vlax-read-enabled-p": {
-        "prefix": "vlax-read-enabled-p",
-        "body": "vlax-read-enabled-p",
-        "description": ""
+        "prefix" : "vlax-read-enabled-p",
+        "body" : "vlax-read-enabled-p ${1:obj}",
+        "description" : "Determines if an object can be read"
     },
     "vlax-release-object": {
-        "prefix": "vlax-release-object",
-        "body": "vlax-release-object ${1:obj}",
-        "description": "Releases a drawing object"
+        "prefix" : "vlax-release-object",
+        "body" : "vlax-release-object ${1:obj}",
+        "description" : "Releases a drawing object"
     },
     "vlax-remove-cmd": {
-        "prefix": "vlax-remove-cmd",
-        "body": "vlax-remove-cmd",
-        "description": ""
+        "prefix" : "vlax-remove-cmd",
+        "body" : "vlax-remove-cmd ${1:global-name}",
+        "description" : "Removes a single command or a command group"
     },
     "vlax-safearray-fill": {
-        "prefix": "vlax-safearray-fill",
-        "body": "vlax-safearray-fill",
-        "description": ""
+        "prefix" : "vlax-safearray-fill",
+        "body" : "vlax-safearray-fill ${1:var} ${2:'element-values}",
+        "description" : "Stores data in the elements of a safearray"
     },
     "vlax-safearray-get-dim": {
-        "prefix": "vlax-safearray-get-dim",
-        "body": "vlax-safearray-get-dim",
-        "description": ""
+        "prefix" : "vlax-safearray-get-dim",
+        "body" : "vlax-safearray-get-dim ${1:var}",
+        "description" : "Returns the number of dimensions in a safearray object"
     },
     "vlax-safearray-get-element": {
-        "prefix": "vlax-safearray-get-element",
-        "body": "vlax-safearray-get-element",
-        "description": ""
+        "prefix" : "vlax-safearray-get-element",
+        "body" : "vlax-safearray-get-element ${1:var} ${2:elements...}",
+        "description" : "Returns an element from an array"
     },
     "vlax-safearray-get-l-bound": {
-        "prefix": "vlax-safearray-get-l-bound",
-        "body": "vlax-safearray-get-l-bound",
-        "description": ""
+        "prefix" : "vlax-safearray-get-l-bound",
+        "body" : "vlax-safearray-get-l-bound ${1:var} ${2:dim}",
+        "description" : "Returns the lower boundary (starting index) of a dimension of an array"
     },
     "vlax-safearray-get-u-bound": {
-        "prefix": "vlax-safearray-get-u-bound",
-        "body": "vlax-safearray-get-u-bound",
-        "description": ""
+        "prefix" : "vlax-safearray-get-u-bound",
+        "body" : "vlax-safearray-get-u-bound ${1:var} ${2:dim}",
+        "description" : "Returns the upper boundary (end index) of a dimension of an array"
     },
     "vlax-safearray-put-element": {
-        "prefix": "vlax-safearray-put-element",
-        "body": "vlax-safearray-put-element",
-        "description": ""
+        "prefix" : "vlax-safearray-put-element",
+        "body" : "vlax-safearray-put-element ${1:var} ${2:index} ${3:value}",
+        "description" : "Adds an element to an array"
     },
     "vlax-safearray-type": {
-        "prefix": "vlax-safearray-type",
-        "body"  : "vlax-safearray-type",
-        "description": ""
+        "prefix" : "vlax-safearray-type",
+        "body" : "vlax-safearray-type ${1:var}",
+        "description" : "Returns the data type of a safearray"
     },
     "vlax-safearray->list": {
-        "prefix": "vlax-safearray->list",
-        "body"  : "vlax-safearray->list",
-        "description": ""
+        "prefix" : "vlax-safearray->list",
+        "body" : "vlax-safearray->list ${1:var}",
+        "description" : "Returns the elements of a safearray in list form"
     },
     "vlax-tmatrix": {
-        "prefix": "vlax-tmatrix",
-        "body"  : "vlax-tmatrix",
-        "description": ""
+        "prefix" : "vlax-tmatrix",
+        "body" : "vlax-tmatrix ${1:lst}",
+        "description" : "Returns a suitable representation for a 4 x 4 transformation matrix to be used in VLA methods"
     },
     "vlax-typeinfo-available-p": {
-        "prefix": "vlax-typeinfo-available-p",
-        "body"  : "vlax-typeinfo-available-p",
-        "description": ""
+        "prefix" : "vlax-typeinfo-available-p",
+        "body" : "vlax-typeinfo-available-p ${1:obj}",
+        "description" : "Determines whether TypeLib information is present for the specified type of object"
+    },
+    "vlax-user-product-key": {
+        "prefix" : "vlax-user-product-key",
+        "body" : "vlax-user-product-key",
+        "description" : "Returns the AutoCAD Windows registry path in the HKCU (HKEY_CURRENT_USER)"
     },
     "vlax-variant-change-type": {
-        "prefix": "vlax-variant-change-type",
-        "body"  : "vlax-variant-change-type",
-        "description": ""
+        "prefix" : "vlax-variant-change-type",
+        "body" : "vlax-variant-change-type ${1:var} ${2:type}",
+        "description" : "Returns the value of a variant after changing it from one data type to another"
     },
     "vlax-variant-type": {
-        "prefix": "vlax-variant-type",
-        "body"  : "vlax-variant-type",
-        "description": ""
+        "prefix" : "vlax-variant-type",
+        "body" : "vlax-variant-type ${1:var}",
+        "description" : "Determines the data type of a variant"
     },
     "vlax-variant-value": {
-        "prefix": "vlax-variant-value",
-        "body"  : "vlax-variant-value",
-        "description": ""
+        "prefix" : "vlax-variant-value",
+        "body" : "vlax-variant-value ${1:var}",
+        "description" : "Returns the value of a variant"
     },
     "vlax-vla-object->ename": {
-        "prefix": "vlax-vla-object->ename",
-        "body"  : "vlax-vla-object->ename ${1:obj}",
-        "description": "Transforms a VLA-object to an AutoLISP entity"
+        "prefix" : "vlax-vla-object->ename",
+        "body" : "vlax-vla-object->ename ${1:obj}",
+        "description" : "Transforms a VLA-object to an AutoLISP entity"
     },
     "vlax-write-enabled-p": {
-        "prefix": "vlax-write-enabled-p",
-        "body"  : "vlax-write-enabled-p",
-        "description": ""
+        "prefix" : "vlax-write-enabled-p",
+        "body" : "vlax-write-enabled-p ${1:obj}",
+        "description" : "Determines if an AutoCAD drawing object can be modified"
+    },
+    "vlisp-compile": {
+        "prefix" : "vlisp-compile",
+        "body" : "vlisp-compile ${1:'mode} ${2:filename} ${3:[out-filename]}",
+        "description" : "Compiles AutoLISP source code into a FAS file"
+    },
+    "vlr-acdb-reactor": {
+        "prefix" : "vlr-acdb-reactor",
+        "body" : "vlr-acdb-reactor ${1:data} ${2:callbacks}",
+        "description" : "Constructs a reactor object that notifies when an object is added to, modified in, or erased from a drawing database"
+    },
+    "vlr-add": {
+        "prefix" : "vlr-add",
+        "body" : "vlr-add ${1:obj}",
+        "description" : "Enables a disabled reactor object"
+    },
+    "vlr-added-p": {
+        "prefix" : "vlr-added-p",
+        "body" : "vlr-added-p ${1:obj}",
+        "description" : "Tests to determine if a reactor object is enabled"
+    },
+    "vlr-beep-reaction": {
+        "prefix" : "vlr-beep-reaction",
+        "body" : "vlr-beep-reaction ${1:[args...]}",
+        "description" : "Produces a beep sound"
+    },
+    "vlr-command-reactor": {
+        "prefix" : "vlr-command-reactor",
+        "body" : "vlr-command-reactor ${1:data} ${2:callbacks}",
+        "description" : "Constructs an editor reactor that notifies of a command event"
+    },
+    "vlr-current-reaction-name": {
+        "prefix" : "vlr-current-reaction-name",
+        "body" : "vlr-current-reaction-name",
+        "description" : "Returns the name (symbol) of the current event, if called from within a reactor's callback"
+    },
+    "vlr-data-set": {
+        "prefix" : "vlr-data-set",
+        "body" : "vlr-data-set ${1:obj} ${2:data}",
+        "description" : "Overwrites application-specific data associated with a reactor"
+    },
+    "vlr-data": {
+        "prefix" : "vlr-data",
+        "body" : "vlr-data ${1:obj}",
+        "description" : "Returns application-specific data associated with a reactor"
+    },
+    "vlr-deepclone-reactor": {
+        "prefix" : "vlr-deepclone-reactor",
+        "body" : "vlr-deepclone-reactor ${1:data} ${2:callbacks}",
+        "description" : "Constructs an editor reactor object that notifies of a deep clone event"
+    },
+    "vlr-docmanager-reactor": {
+        "prefix" : "vlr-docmanager-reactor",
+        "body" : "vlr-docmanager-reactor ${1:data} ${2:callbacks}",
+        "description" : "Constructs a reactor object that notifies of events relating to drawing documents"
+    },
+    "vlr-dwg-reactor": {
+        "prefix" : "vlr-dwg-reactor",
+        "body" : "vlr-dwg-reactor ${1:data} ${2:callbacks}",
+        "description" : "Constructs an editor reactor object that notifies of a drawing event (for example, opening or closing a drawing file)"
+    },
+    "vlr-dxf-reactor": {
+        "prefix" : "vlr-dxf-reactor",
+        "body" : "vlr-dxf-reactor ${1:data} ${2:callbacks}",
+        "description" : "Constructs an editor reactor object that notifies of an event related to reading or writing a DXF file"
+    },
+    "vlr-editor-reactor": {
+        "prefix" : "vlr-editor-reactor",
+        "body" : "vlr-editor-reactor ${1:data} ${2:callbacks}",
+        "description" : "Constructs an editor reactor object"
+    },
+    "vlr-insert-reactor": {
+        "prefix" : "vlr-insert-reactor",
+        "body" : "vlr-insert-reactor ${1:data} ${2:callbacks}",
+        "description" : "Constructs an editor reactor object that notifies of an event related to block insertion"
+    },
+    "vlr-linker-reactor": {
+        "prefix" : "vlr-linker-reactor",
+        "body" : "vlr-linker-reactor ${1:data} ${2:callbacks}",
+        "description" : "Constructs a reactor object that notifies your application every time an ObjectARX application is loaded or unloaded"
+    },
+    "vlr-lisp-reactor": {
+        "prefix" : "vlr-lisp-reactor",
+        "body" : "vlr-lisp-reactor ${1:data} ${2:callbacks}",
+        "description" : "Constructs an editor reactor object that notifies of a LISP event"
+    },
+    "vlr-miscellaneous-reactor": {
+        "prefix" : "vlr-miscellaneous-reactor",
+        "body" : "vlr-miscellaneous-reactor ${1:data} ${2:callbacks}",
+        "description" : "Constructs an editor reactor object that does not fall under any other editor reactor types"
+    },
+    "vlr-mouse-reactor": {
+        "prefix" : "vlr-mouse-reactor",
+        "body" : "vlr-mouse-reactor ${1:data} ${2:callbacks}",
+        "description" : "Constructs an editor reactor object that notifies of a mouse event (for example, a double-click)"
+    },
+    "vlr-notification": {
+        "prefix" : "vlr-notification",
+        "body" : "vlr-notification ${1:reactor}",
+        "description" : "Determines whether or not a reactor will fire if its associated namespace is not active"
+    },
+    "vlr-object-reactor": {
+        "prefix" : "vlr-object-reactor",
+        "body" : "vlr-object-reactor ${1:owners} ${2:data} ${3:callbacks}",
+        "description" : "Constructs a drawing object reactor object"
+    },
+    "vlr-owner-add": {
+        "prefix" : "vlr-owner-add",
+        "body" : "vlr-owner-add ${1:reactor} ${2:owner}",
+        "description" : "Adds an object to the list of owners of an object reactor"
+    },
+    "vlr-owner-remove": {
+        "prefix" : "vlr-owner-remove",
+        "body" : "vlr-owner-remove ${1:reactor} ${2:owner}",
+        "description" : "Removes an object from the list of owners of an object reactor"
+    },
+    "vlr-owners": {
+        "prefix" : "vlr-owners",
+        "body" : "vlr-owners ${1:reactor}",
+        "description" : "Returns the list of owners of an object reactor"
+    },
+    "vlr-pers-list": {
+        "prefix" : "vlr-pers-list",
+        "body" : "vlr-pers-list ${1:[reactor]}",
+        "description" : "Returns a list of persistent reactors in the current drawing document"
+    },
+    "vlr-pers-p": {
+        "prefix" : "vlr-pers-p",
+        "body" : "vlr-pers-p ${1:reactor}",
+        "description" : "Determines whether a reactor is persistent"
+    },
+    "vlr-pers-release": {
+        "prefix" : "vlr-pers-release",
+        "body" : "vlr-pers-release ${1:reactor}",
+        "description" : "Makes a reactor transient"
+    },
+    "vlr-pers": {
+        "prefix" : "vlr-pers",
+        "body" : "vlr-pers ${1:reactor}",
+        "description" : "Makes a reactor persistent"
+    },
+    "vlr-reaction-name": {
+        "prefix" : "vlr-reaction-name",
+        "body" : "vlr-reaction-names ${1:reactor-type}",
+        "description" : "Returns a list of all possible callback conditions for this reactor type"
+    },
+    "vlr-reaction-set": {
+        "prefix" : "vlr-reaction-set",
+        "body" : "vlr-reaction-set ${1:reactor} ${2:event} ${3:function}",
+        "description" : "Adds or replaces a callback function in a reactor"
+    },
+    "vlr-reactions": {
+        "prefix" : "vlr-reactions",
+        "body" : "vlr-reactions ${1:reactor}",
+        "description" : "Returns a list of pairs (event-name . callback_function) for the reactor"
+    },
+    "vlr-reactors": {
+        "prefix" : "vlr-reactors",
+        "body" : "vlr-reactors ${1:[reactor-type...]}",
+        "description" : "Returns a list of existing reactors"
+    },
+    "vlr-remove-all": {
+        "prefix" : "vlr-remove-all",
+        "body" : "vlr-remove-all ${1:[reactor-type]}",
+        "description" : "Disables all reactors of the specified type"
+    },
+    "vlr-remove": {
+        "prefix" : "vlr-remove",
+        "body" : "vlr-remove ${1:reactor}",
+        "description" : "Disables a reactor"
+    },
+    "vlr-set-notification": {
+        "prefix" : "vlr-set-notification",
+        "body" : "vlr-set-notification ${1:reactor} ${2:'range}",
+        "description" : "Defines whether a reactor's callback function will execute if its associated namespace is not active"
+    },
+    "vlr-sysvar-reactor": {
+        "prefix" : "vlr-sysvar-reactor",
+        "body" : "vlr-sysvar-reactor ${1:data} ${2:callbacks}",
+        "description" : "Constructs an editor reactor object that notifies of a change to a system variable"
+    },
+    "vlr-toolbar-reactor": {
+        "prefix" : "vlr-toolbar-reactor",
+        "body" : "vlr-toolbar-reactor ${1:data} ${2:callbacks}",
+        "description" : "Constructs an editor reactor object that notifies of a change to the bitmaps in a toolbar"
+    },
+    "vlr-trace-reaction": {
+        "prefix" : "vlr-trace-reaction",
+        "body" : "vlr-trace-reaction",
+        "description" : "A predefined callback function that prints one or more callback arguments in the Trace window"
+    },
+    "vlr-type": {
+        "prefix" : "vlr-type",
+        "body" : "vlr-type ${1:reactor}",
+        "description" : "Returns a symbol representing the reactor type"
+    },
+    "vlr-types": {
+        "prefix" : "vlr-types",
+        "body" : "vlr-types",
+        "description" : "Returns a list of all reactor types"
+    },
+    "vlr-undo-reactor": {
+        "prefix" : "vlr-undo-reactor",
+        "body" : "vlr-undo-reactor ${1:data} ${2:callbacks}",
+        "description" : "Constructs an editor reactor object that notifies of an undo event"
+    },
+    "vlr-wblock-reactor": {
+        "prefix" : "vlr-wblock-reactor",
+        "body" : "vlr-wblock-reactor ${1:data} ${2:callbacks}",
+        "description" : "Constructs an editor reactor object that notifies of an event related to writing a block"
+    },
+    "vlr-window-reactor": {
+        "prefix" : "vlr-window-reactor",
+        "body" : "vlr-window-reactor ${1:data} ${2:callbacks}",
+        "description" : "Constructs an editor reactor object that notifies of an event related to moving or sizing an AutoCAD window"
+    },
+    "vlr-xref-reactor": {
+        "prefix" : "vlr-xref-reactor",
+        "body" : "vlr-xref-reactor ${1:data} ${2:callbacks}",
+        "description" : "Constructs an editor reactor object that notifies of an event related to attaching or modifying XREFs"
+    },
+    "wcmatch": {
+        "prefix" : "wcmatch",
+        "body" : "wcmatch ${1:str} ${2:pattern}",
+        "description" : "Performs a wild-card pattern match on a string"
+    },
+    "while": {
+        "prefix" : "while",
+        "body" : "while ${1:testexpr} ${2:[expr...]}",
+        "description" : "Evaluates a test expression, and if it is not nil, evaluates other expressions; repeats this process until the test expression evaluates to nil"
+    },
+    "write-char": {
+        "prefix" : "write-char",
+        "body" : "write-char ${1:num} ${2:[file-desc]}",
+        "description" : "Writes one character to the screen or to an open file"
+    },
+    "write-line": {
+        "prefix" : "write-line",
+        "body" : "write-line ${1:str} ${2:[file-desc]}",
+        "description" : "Writes a string to the screen or to an open file"
+    },
+    "xdroom": {
+        "prefix" : "xdroom",
+        "body" : "xdroom ${1:ename}",
+        "description" : "Returns the amount of extended data (xdata) space that is available for an object (entity)"
+    },
+    "xdsize": {
+        "prefix" : "xdsize",
+        "body" : "xdsize ${1:lst}",
+        "description" : "Returns the size (in bytes) that a list occupies when it is linked to an object (entity) as extended data"
+    },
+    "zerop": {
+        "prefix" : "zerop",
+        "body" : "zerop ${1:number}",
+        "description" : "Verifies that a number evaluates to zero"
     }
 }
