@@ -94,25 +94,25 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:case|if|foreach|repeat|while)\b</string>
+			<string>\b(?i:cond|if|foreach|repeat|while)\b</string>
 			<key>name</key>
 			<string>keyword.control.alisp</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:eq|neq|and|or)\b</string>
+			<string>\b(?i:eq|neq|and|or|not|null)\b</string>
 			<key>name</key>
 			<string>keyword.operator.alisp</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:null|nil)\b</string>
+			<string>\b(?i:t|nil)\b</string>
 			<key>name</key>
 			<string>constant.language.alisp</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:cons|car|cdr|cond|lambda|setq|quote|eval|append|list|listp|load|progn|
+			<string>\b(?i:cons|car|cdr|lambda|setq|quote|eval|append|list|listp|load|progn|
 			|3dsin|
 			|abs|acad_colordlg|acad_helpdlg|acad-pop-dbmod|acad_strlsort|acad_truecolorcli|acad_truecolordlg|acdimenableupdate|acet-layerp-mode|acet-layerp-mark|acet-laytrans|acet-ms-to-ps|acet-ps-to-ms|action_tile|add_list|alert|align|alloc|and|angle|angtof|angtos|apply|arx|arxload|arxunload|ascii|assoc|atan|atof|atoi|atom|atoms-family|autoarxload|autoload|
 			|boole|boundp|
@@ -125,7 +125,7 @@
 			|initcommandversion|initdia|initget|inters|ispropertyreadonly|itoa|
 			|last|layoutlist|layerstate-addlayers|layerstate-compare|layerstate-delete|layerstate-export|layerstate-getlastrestored|layerstate-getlayers|layerstate-getnames|layerstate-has|layerstate-import|layerstate-importfromdb|layerstate-removelayers|layerstate-rename|layerstate-restore|layerstate-save|length|load_dialog|log|logand|logior|lsh|
 			|mapcar|max|mem|member|menucmd|menugroup|min|minusp|mirror3d|mode_tile|
-			|namedobjdict|nentsel|nentselp|new_dialog|not|nth|numberp|
+			|namedobjdict|nentsel|nentselp|new_dialog|nth|numberp|
 			|open|osnap|
 			|polar|prin1|princ|print|prompt|
 			|quit|quote|
